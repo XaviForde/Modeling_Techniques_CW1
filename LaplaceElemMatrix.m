@@ -1,6 +1,7 @@
 function [SqMatrix] = LaplaceElemMatrix(D, eID, msh)
 
-%Returns a local 2x2 element matrix for a given element
+%Returns a local 2x2 element matrix of a given element for a diffusion
+%operator
 % Inputs: 
 % D - Coefficient of Diffusion
 % eID - Index of element within mesh structure
