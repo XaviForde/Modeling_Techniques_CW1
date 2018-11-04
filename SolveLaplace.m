@@ -6,7 +6,7 @@ clc
 D = 1;
 lambda = 0;
 ne = 4;
-f = 0;
+f_scalar = 0;
 xmin = 0;
 xmax = 1;
 %Create Boundary Condition Stucture
@@ -14,8 +14,10 @@ BC(1).type = "dirichlet";
 BC(1).value = 2;
 BC(2).type = "dirichlet";
 BC(2).value = 0;
+f_linear = 0;
 
-mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne,f, BC);
+%Solve 
+mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne, f_linear, f_scalar, BC);
 
 xvec = 0:0.25:1;
 c = zeros(length(xvec),1);
@@ -38,7 +40,7 @@ BC(1).value = 2;
 BC(2).type = "dirichlet";
 BC(2).value = 0;
 %Solve for new boundary condition
-mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne,f, BC);
+mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne, f_linear, f_scalar, BC);
 
 figure(2)
 %figure('Name', 'Laplace''s Equation with Nuemann at x=0')
@@ -51,7 +53,7 @@ BC(1).type = "dirichlet";
 BC(1).value = 0;
 BC(2).type = "dirichlet";
 BC(2).value = 1;
-mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne,f, BC);
+mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne, f_linear, f_scalar, BC);
 
 %Analytical solution
 for i = 1:length(xvec)

@@ -1,4 +1,4 @@
-function [mesh] = StaticReactDiffSolver(lambda, D, xmin, xmax, ne,f, BC)
+function [mesh] = StaticReactDiffSolver(lambda, D, xmin, xmax, ne,f_scalar, f_linear,  BC)
 %%% Solves the static reaction diffusion equation
 % Inputs:
 % lambda - Coefficient for Reaction (scalar)
@@ -13,11 +13,8 @@ mesh = OneDimLinearMeshGen(xmin, xmax, ne); %Create Mesh
 
 GlobalMatrix = zeros((ne+1),(ne+1));  %Initiate Global Matrix
 
-%Create source vector
-F = ones((ne+1),1);
-F = (f/ne) .* F;
-F(1) = f/(2*ne);
-F(end) = f/(2*ne);
+%% Generate the source the vector
+F = SourceVectorGen(mesh, f_scalar, f_linear);
 
 %% Assemble local element matrices into global matrix
 for eID = 1:ne
@@ -41,32 +38,3 @@ for i = 1:length(C)
 end
 
 end
-
-
-% %% Apply Boundary Conditions, will pass if no boundary condition %
-% % Dirichlet Boundary Conditions
-% if BC0_type == "Dirichlet"  %x = xmin boundary
-%    
-%     GlobalMatrix(1,:) = [1, zeros(1,ne)];
-%     F(1) = BC0_value;
-%     
-% end
-% 
-% if BC1_type == "Dirichlet"  %x = xmax boundary:
-%    
-%     GlobalMatrix(end,:) = [zeros(1,ne), 1];
-%     F(end) = BC1_value;
-%     
-% end
-% 
-% % Neumann Boundary Conditions:-
-% if BC0_type == "Nuemann"    %x = xmin boundary:
-%     F(1) = F(1) - BC0_value;
-% end
-% 
-% if BC0_type == "Nuemann"    %x = xmax boundary:
-%     F(end) = F(end) + BC1_value;
-% end
-
-
-

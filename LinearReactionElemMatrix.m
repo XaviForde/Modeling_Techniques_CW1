@@ -1,5 +1,5 @@
 function [SqMatrix] = LinearReactionElemMatrix(lambda, eID, msh)
-
+%%%%%%%%%%%TAKE OUT EID YOU DON'T NEED IT%%%%%%%%%%%%%
 %Returns a local 2x2 element matrix of a given element for a diffusion
 %operator
 % Inputs: 
