@@ -20,8 +20,8 @@ F = SourceVectorGen(mesh, f_scalar, f_linear);
 for eID = 1:ne
     
     %Local Element matrix is the sum of the Laplace and Linear Reation
-    LocalElementMatrix = LinearReactionElemMatrix(lambda, eID, mesh) ...
-                            + LaplaceElemMatrix(D, eID, mesh);
+    LocalElementMatrix = LaplaceElemMatrix(D, eID, mesh) ...
+                            - LinearReactionElemMatrix(lambda, eID, mesh);
     
     GlobalMatrix(eID:(eID+1),eID:(eID+1)) = GlobalMatrix(eID:(eID+1),eID:(eID+1))...
                                             + LocalElementMatrix;

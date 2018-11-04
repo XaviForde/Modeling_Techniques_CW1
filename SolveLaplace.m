@@ -48,7 +48,7 @@ plot(mesh.nvec, mesh.c, '-o')
 
 %% Now check reation terms are solved correctly (bottom of page 3)
 D = 1;
-lambda = 9;
+lambda = -9;
 BC(1).type = "dirichlet";
 BC(1).value = 0;
 BC(2).type = "dirichlet";

@@ -18,9 +18,9 @@ Q = 1;
 
 %Set T_L as a single value for now
 T_L = 294.15;
-f_scalar = -Q*T_L;
+f_scalar = Q*T_L;
 
-mesh = StaticReactDiffSolver(Q, k, xmin, xmax, ne, f_scalar, f_linear, BC);
+mesh = StaticReactDiffSolver(-Q, k, xmin, xmax, ne, f_scalar, f_linear, BC);
 
 x = 0:(xmax/ne):xmax;
 
@@ -29,7 +29,7 @@ plot(x,mesh.c)
 
 %% Second part with linear source term
 f_linear = 4*Q*T_L;
-mesh = StaticReactDiffSolver(Q, k, xmin, xmax, ne,  f_scalar,f_linear, BC);
+mesh = StaticReactDiffSolver(-Q, k, xmin, xmax, ne,  f_scalar,f_linear, BC);
 
 figure(2)
 plot(x,mesh.c)
