@@ -1,10 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.12)  2 NOV 2018 12:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.12)  5 NOV 2018 19:31
 entering extended mode
-**"C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mod
-eling_Techniques_CW1/Report/PC_REPORT.tex"
-
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report/PC_REPORT.tex"
+**./PC_REPORT.tex
+(PC_REPORT.tex
 LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -902,11 +899,18 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 ex"
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen262
-))
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report\PC_REPORT.aux"
+)) (PC_REPORT.aux
 
-LaTeX Warning: Label `table:marginal' multiply defined.
+LaTeX Warning: Label `eq:LHStransform' multiply defined.
+
+
+LaTeX Warning: Label `eq:Int00' multiply defined.
+
+
+LaTeX Warning: Label `eq:Int01' multiply defined.
+
+
+LaTeX Warning: Label `eq:Int00' multiply defined.
 
 )
 \openout1 = `PC_REPORT.aux'.
@@ -987,17 +991,12 @@ LaTeX Info: Redefining \ref on input line 61.
 LaTeX Info: Redefining \pageref on input line 61.
 LaTeX Info: Redefining \nameref on input line 61.
 
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report\PC_REPORT.out")
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report\PC_REPORT.out")
+(PC_REPORT.out) (PC_REPORT.out)
 \@outlinefile=\write5
 \openout5 = `PC_REPORT.out'.
 
-
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report\PC_REPORT.glsdefs")
-<Figures/UOB_Logo.png, id=114, 215.80624pt x 88.33pt>
+ (PC_REPORT.glsdefs)
+<Figures/UOB_Logo.png, id=42, 215.80624pt x 88.33pt>
 File: Figures/UOB_Logo.png Graphic file (type png)
 <use Figures/UOB_Logo.png>
 Package pdftex.def Info: Figures/UOB_Logo.png  used on input line 97. on input 
@@ -1006,96 +1005,33 @@ Package pdftex.def Info: Requested size: 187.89912pt x 76.9098pt on input line
 97.
  [1
 
-{C:/Users/xav_m/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/xa
-v_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Modeling_Techniqu
-es_CW1/Report/Figures/UOB_Logo.png>]
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report\PC_REPORT.toc")
+{C:/Users/xav_m/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Figures/U
+OB_Logo.png>]
+(PC_REPORT.toc)
 \tf@toc=\write6
 \openout6 = `PC_REPORT.toc'.
 
-
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report\PC_REPORT.lof"pdfTeX warning (ext4): destination wit
-h the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.7 ...rgin History\relax }}{8}{figure.caption.13}
-                                                   [1])
+ (PC_REPORT.lof)
 \tf@lof=\write7
 \openout7 = `PC_REPORT.lof'.
 
-
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report\PC_REPORT.lot")
+ (PC_REPORT.lot)
 \tf@lot=\write8
 \openout8 = `PC_REPORT.lot'.
 
-
-("C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report\PC_REPORT.nls"
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.17   \item [{LCC}]
-                    \begingroup Life Cycle Cost\nomeqref {0}\nompageref{3}
-[2]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.51   \item [{$C_{ea_{m}}$}]
-                             \begingroup Engine and Avionics Cost for Manufa...
-[3]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.89   \item [{$F_{mat}$}]
-                          \begingroup Material Factor\nomeqref {0} [4])
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.126 \clearpage
-                 [5]
-
-LaTeX Warning: Reference `eq:weakform' on page 1 undefined on input line 133.
-
-<Figures/SplitIntoElements.PNG, id=246, 617.80812pt x 276.53313pt>
+l.123 \clearpage
+                 [1]
+<Figures/SplitIntoElements.PNG, id=75, 617.80812pt x 276.53313pt>
 File: Figures/SplitIntoElements.PNG Graphic file (type png)
 <use Figures/SplitIntoElements.PNG>
-Package pdftex.def Info: Figures/SplitIntoElements.PNG  used on input line 144.
- on input line 144.
+Package pdftex.def Info: Figures/SplitIntoElements.PNG  used on input line 142.
+ on input line 142.
 Package pdftex.def Info: Requested size: 352.31624pt x 157.70146pt on input lin
-e 144.
-
-LaTeX Warning: Reference `eq:Lagrange' on page 1 undefined on input line 155.
+e 142.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1105,22 +1041,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1
 
- <C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mode
-ling_Techniques_CW1/Report/Figures/SplitIntoElements.PNG>]
-<Figures/Local2Standard.PNG, id=259, 660.96938pt x 281.55188pt>
+ <./Figures/SplitIntoElements.PNG>]
+<Figures/Local2Standard.PNG, id=92, 660.96938pt x 281.55188pt>
 File: Figures/Local2Standard.PNG Graphic file (type png)
 <use Figures/Local2Standard.PNG>
-Package pdftex.def Info: Figures/Local2Standard.PNG  used on input line 182. on
- input line 182.
+Package pdftex.def Info: Figures/Local2Standard.PNG  used on input line 180. on
+ input line 180.
 Package pdftex.def Info: Requested size: 352.31624pt x 150.081pt on input line 
-182.
-
-
-LaTeX Warning: Reference `eq:weakform' on page 2 undefined on input line 185.
-
-
-LaTeX Warning: Reference `eq:LHStransform' on page 2 undefined on input line 20
-1.
+180.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1128,119 +1056,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <C:/Users/xav_m/OneDrive/Documents/XAVI/University/Final Year/Systems Mod/Mo
-deling_Techniques_CW1/Report/Figures/Local2Standard.PNG>]
+[2 <./Figures/Local2Standard.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 247--250
 
-LaTeX Warning: Reference `eq:Jacobian' on page 3 undefined on input line 206.
-
-
-LaTeX Warning: Reference `eq:LHStransform' on page 3 undefined on input line 20
-6.
-
-
-LaTeX Warning: Reference `eq:LagrangePSI' on page 3 undefined on input line 212
-.
-
-
-LaTeX Warning: Reference `eq:LHStransform2' on page 3 undefined on input line 2
-23.
-
-Runaway argument?
- &J^{-1} \left [c_0 \int _{-1}^{1} D \frac {d\psi _{0}}{d\zeta } \frac \ETC.
-! Paragraph ended before \align was complete.
-<to be read again> 
-                   \par 
-l.230 
-      
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.230 
-      
-? 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.230 
-      
-? return
-OK, entering \nonstopmode...
-! Display math should end with $$.
-<to be read again> 
-                   \par 
-l.230 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-LaTeX Warning: Reference `eq:row1' on page 3 undefined on input line 231.
-
-
-LaTeX Warning: Reference `eq:row2' on page 3 undefined on input line 231.
-
-! Misplaced \cr.
-\math@cr@@@ ->\cr 
-                  
-l.232 \end{align}
-                 
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \noalign.
-\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
-                                                  {\vskip #1\relax }
-l.232 \end{align}
-                 
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Misplaced \noalign.
-\black@ #1->\noalign 
-                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
-l.232 \end{align}
-                 
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-
-Overfull \hbox (114.64503pt too wide) detected at line 232
-[]
  []
 
-! Extra }, or forgotten \endgroup.
-\endalign ->\math@cr \black@ \totwidth@ \egroup 
-                                                \ifingather@ \restorealignst...
-l.232 \end{align}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.232 \end{align}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.232 \end{align}
-                 
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1249,222 +1073,190 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 395.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 395.
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+
+ []
+
+
+Package caption Warning: \label without proper reference on input line 327.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:unittest1' on page 5 undefined on input line 323.
+
+
+<Figures/CW1Test.PNG, id=142, 700.11563pt x 412.03937pt>
+File: Figures/CW1Test.PNG Graphic file (type png)
+<use Figures/CW1Test.PNG>
+Package pdftex.def Info: Figures/CW1Test.PNG  used on input line 328. on input 
+line 328.
+Package pdftex.def Info: Requested size: 352.31624pt x 207.35207pt on input lin
+e 328.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5
+
+ <./Figures/CW1Test.PNG>]
+
+LaTeX Warning: Reference `eq:reatJ' on page 6 undefined on input line 342.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
+
+Package caption Warning: \label without proper reference on input line 445.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:LaplaceFig1' on page 8 undefined on input line 44
+3.
+
+Package epstopdf Info: Source file: <Figures/epsLaplaceFig1.eps>
+(epstopdf)                    date: 2018-11-05 19:28:47
+(epstopdf)                    size: 57587 bytes
+(epstopdf)             Output file: <Figures/epsLaplaceFig1-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2018-11-05 19:31:32
+(epstopdf)                    size: 23396 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsLaplaceFig1-eps-
+converted-to.pdf Figures/epsLaplaceFig1.eps>
+(epstopdf)             \includegraphics on input line 447.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsLaplaceFig1-eps-converted-to.pdf, id=186, pagebox=cropbox, 362.3537
+4pt x 307.1475pt>
+File: Figures/epsLaplaceFig1-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsLaplaceFig1-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsLaplaceFig1-eps-converted-to.pdf  used on i
+nput line 447. on input line 447.
+Package pdftex.def Info: Requested size: 362.35286pt x 307.14674pt on input lin
+e 447.
+Package epstopdf Info: Source file: <Figures/epsLaplaceFig2.eps>
+(epstopdf)                    date: 2018-11-05 19:28:47
+(epstopdf)                    size: 64349 bytes
+(epstopdf)             Output file: <Figures/epsLaplaceFig2-eps-converted-to.pd
+f>
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsLaplaceFig2-eps-
+converted-to.pdf Figures/epsLaplaceFig2.eps>
+(epstopdf)             \includegraphics on input line 463.
+runsystem(epstopdf --outfile=Figures/epsLaplaceFig2-eps-converted-to.pdf Figure
+s/epsLaplaceFig2.eps)...executed (allowed).
+
+Package epstopdf Info: Result file: <Figures/epsLaplaceFig2-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2018-11-05 19:31:43
+(epstopdf)                    size: 24115 bytes.
+<Figures/epsLaplaceFig2-eps-converted-to.pdf, id=188, pagebox=cropbox, 365.365p
+t x 303.1325pt>
+File: Figures/epsLaplaceFig2-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsLaplaceFig2-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsLaplaceFig2-eps-converted-to.pdf  used on i
+nput line 463. on input line 463.
+Package pdftex.def Info: Requested size: 365.3641pt x 303.13176pt on input line
+ 463.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8 <./Figures/epsLaplaceFig1-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 511.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 <./Figures/epsLaplaceFig2-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 511.
  (PC_REPORT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 395.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 395.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 511.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 511.
+Package rerunfilecheck Info: File `PC_REPORT.out' has not changed.
+(rerunfilecheck)             Checksum: A215D771A7ABC5B4ACC313E408546DCD;707.
 
-
-Package rerunfilecheck Warning: File `PC_REPORT.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `PC_REPORT.out':
-(rerunfilecheck)             Before: A9EC4C23D64ADA86BE3385A4DD8CD42D;1745
-(rerunfilecheck)             After:  D02EDE06C0C49DCA2EB377F45F5725EE;214.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 395.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 511.
  ) 
 Here is how much of TeX's memory you used:
- 25709 strings out of 493312
- 484387 string characters out of 3138898
- 627194 words of memory out of 3000000
- 28671 multiletter control sequences out of 15000+200000
+ 25668 strings out of 493312
+ 483097 string characters out of 3138898
+ 627825 words of memory out of 3000000
+ 28638 multiletter control sequences out of 15000+200000
  11316 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,67p,2115b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{table.caption.30} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.29} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.26} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.22} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.17} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.16} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.15} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.14} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.11} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.33} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.32} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.31} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.28} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.27} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.25} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.24} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.23} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.21} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.20} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.19} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.18} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.13} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.ben} has been referenced but does not exist, r
-eplaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.12} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.10} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.R8} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.9} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Sherman} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.8} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.7} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Appendix.1.B} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Appendix.1.A} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.36} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.8} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.5} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.4} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.6.4} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.6.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.6.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.6.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{section.5} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.4} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.3.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.3.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.3.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3} has been referenced but does not exist, 
-replaced by a fixed one
-
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmti12.pfb>
-Output written on PC_REPORT.pdf (9 pages, 275425 bytes).
+ 55i,20n,77p,1998b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmti12.pfb>
+Output written on PC_REPORT.pdf (11 pages, 347665 bytes).
 PDF statistics:
- 362 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

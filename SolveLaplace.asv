@@ -56,9 +56,6 @@ mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne, f_linear, f_scalar, BC);
 figure(2)
 %figure('Name', 'Laplace''s Equation with Nuemann at x=0')
 LaplaceFig2 = plot(mesh.nvec, mesh.c, '-o');
-title('Laplace Equation with Neumann Boundary at $x = 0$', 'interpreter' ,'latex', 'FontSize', 12)
-grid on
-xticks(0:.25:1)
 xlabel('0 $\leq x  \leq$ 1','interpreter','latex', 'FontSize', 12);
 ylabel('c ', 'interpreter','latex', 'FontSize', 12);
 print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig2' 

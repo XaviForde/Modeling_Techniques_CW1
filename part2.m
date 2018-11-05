@@ -14,10 +14,10 @@ BC(2).value = 293.15;       %Temperature in Kelvin
 f_linear = 0;
 
 %Set Q as a single value for now
-Q = 1;
+Q = 1.5;
 
 %Set T_L as a single value for now
-T_L = 294.15;
+T_L = 322.15;
 f_scalar = Q*T_L;
 
 mesh = StaticReactDiffSolver(-Q, k, xmin, xmax, ne, f_scalar, f_linear, BC);
