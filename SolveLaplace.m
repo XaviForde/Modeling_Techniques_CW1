@@ -16,7 +16,7 @@ BC(2).type = "dirichlet";
 BC(2).value = 0;
 f_linear = 0;
 
-%Solve 
+%Solve
 mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne, f_linear, f_scalar, BC);
 
 xvec = 0:0.25:1;
@@ -35,7 +35,7 @@ ylabel('c ', 'interpreter','latex', 'FontSize', 12);
 xlabel('0 $\leq x  \leq$ 1','interpreter','latex', 'FontSize', 12);
 legend({'Analytical','FEM'}, 'Interpreter', 'latex')
 xticks(0:.25:1)
-print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig1' 
+%print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig1'
 
 %Calculate error In FEM model
 error = zeros(ne+1,1);
@@ -55,13 +55,14 @@ mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne, f_linear, f_scalar, BC);
 
 figure(2)
 %figure('Name', 'Laplace''s Equation with Nuemann at x=0')
-LaplaceFig2 = plot(mesh.nvec, mesh.c, '-o');
+LaplaceFig2 = plot(mesh.nvec, mesh.c, '-x');
 title('Laplace Equation with Neumann Boundary at $x = 0$', 'interpreter' ,'latex', 'FontSize', 12)
 grid on
 xticks(0:.25:1)
 xlabel('0 $\leq x  \leq$ 1','interpreter','latex', 'FontSize', 12);
 ylabel('c ', 'interpreter','latex', 'FontSize', 12);
-print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig2' 
+ylim([-2.5 0]);
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig2'
 
 
 %% Now check reation terms are solved correctly (bottom of page 3)
@@ -71,16 +72,31 @@ BC(1).type = "dirichlet";
 BC(1).value = 0;
 BC(2).type = "dirichlet";
 BC(2).value = 1;
-mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne, f_linear, f_scalar, BC);
+
 
 %Analytical solution
+xvec = 0:(1/100):1;
 for i = 1:length(xvec)
     c(i) = (exp(3)/(exp(6)-1)) * (exp(3*xvec(i)) - exp(-3*xvec(i)));
 end
 %Plot the results of FEM and analytical
 figure(3)
 %figure('Name', 'Laplace''s Equation with Nuemann at x=0')
-plot(mesh.nvec, mesh.c, 'g-o')
+
 grid on
 hold on
-plot(xvec, c, 'kx')
+plot(xvec, c, '-b', 'LineWidth', .5)
+elem_range = [3,5,10,25];
+for i = 1:length(elem_range) 
+    ne = elem_range(i);
+    mesh = StaticReactDiffSolver(lambda, D, xmin, xmax, ne, f_linear, f_scalar, BC);
+    plot(mesh.nvec, mesh.c, '--')
+    hold on
+end
+title('Diffusion-Reaction Equation: $\frac{\partial^2 c}{\partial x^2} -9c = 0$', 'interpreter' ,'latex', 'FontSize', 12)
+lgd = legend('Analytical', num2str(elem_range(1)), num2str(elem_range(2)), num2str(elem_range(3)) , num2str(elem_range(4)), 'Location', 'southeast');
+lgd.Title.String = 'Number Of Elements';
+xlabel('0 $\leq x  \leq$ 1','interpreter','latex', 'FontSize', 12);
+ylabel('c ', 'interpreter','latex', 'FontSize', 12);
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsReactDiff1'
+hold off

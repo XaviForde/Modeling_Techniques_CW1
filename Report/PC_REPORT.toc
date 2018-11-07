@@ -6,4 +6,8 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Derivation of Reaction Element Matrix}{6}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}Solving Laplace With Dirichlet Boundaries}{7}{subsubsection.1.2.2}
 \contentsline {subsubsection}{\numberline {1.2.3}Add a Neumann Boundary}{8}{subsubsection.1.2.3}
-\contentsline {section}{\numberline {2}Part 2}{8}{section.2}
+\contentsline {subsection}{\numberline {1.3}Question 1d}{9}{subsection.1.3}
+\contentsline {section}{\numberline {2}Part 2}{10}{section.2}
+\contentsline {subsubsection}{\numberline {2.0.1}Effect of Mesh Size}{14}{subsubsection.2.0.1}
+\contentsline {subsection}{\numberline {2.1}Question 2b}{16}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Derivation of Linear Source Term}{16}{subsubsection.2.1.1}

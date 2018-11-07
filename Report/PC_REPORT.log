@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.12)  5 NOV 2018 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.12)  7 NOV 2018 17:21
 entering extended mode
 **./PC_REPORT.tex
 (PC_REPORT.tex
@@ -23,9 +23,6 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\placeins\placeins.sty"
 Package: placeins 2005/04/18  v 2.2
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
-Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2017/09/02 v2.17a AMS math features
@@ -661,6 +658,38 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@ppsavesec=\count154
 \c@@ppsaveapp=\count155
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\mwe\mwe.sty"
+Package: mwe 2018/03/30 v0.5 Package to support minimal working examples (MWE)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count156
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\blindtext\blindtext.sty"
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count157
+\c@Blindtext=\count158
+\c@blind@countparstart=\count159
+\blind@countxx=\count160
+\blindtext@numBlindtext=\count161
+\blind@countyy=\count162
+\c@blindlist=\count163
+\c@blindlistlevel=\count164
+\c@blindlist@level=\count165
+\blind@listitem=\count166
+\c@blind@listcount=\count167
+\c@blind@levelcount=\count168
+\blind@mathformula=\count169
+\blind@Mathformula=\count170
+\c@blind@randomcount=\count171
+\c@blind@randommax=\count172
+\c@blind@pangramcount=\count173
+\c@blind@pangrammax=\count174
+))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\glossaries\base\glossaries.sty"
 Package: glossaries 2018/04/07 v4.37 (NLCT)
 
@@ -672,7 +701,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks37
 \XKV@tempa@toks=\toks38
 )
-\XKV@depth=\count156
+\XKV@depth=\count175
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\mfirstuc\mfirstuc.sty"
@@ -680,7 +709,7 @@ Package: mfirstuc 2017/11/14 v2.06 (NLCT)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count157
+\etb@tempcnta=\count176
 )
 \@glsmfirst=\toks39
 \@glsmrest=\toks40
@@ -696,7 +725,7 @@ Package: datatool-base 2018/04/16 v2.30 (NLCT)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\substr\substr.sty"
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count158
+\c@su@anzahl=\count177
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\datatool\datatool-fp.sty"
 Package: datatool-fp 2018/04/16 v2.30 (NLCT)
@@ -707,19 +736,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fp\defpattern.sty"
 Package: defpattern 1994/10/12
-\actioncount=\count159
+\actioncount=\count178
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fp\fp-basic.sty"
 Package: fp-basic 1996/05/13
-\FP@xs=\count160
-\FP@xia=\count161
-\FP@xib=\count162
-\FP@xfa=\count163
-\FP@xfb=\count164
-\FP@rega=\count165
-\FP@regb=\count166
-\FP@regs=\count167
-\FP@times=\count168
+\FP@xs=\count179
+\FP@xia=\count180
+\FP@xib=\count181
+\FP@xfa=\count182
+\FP@xfb=\count183
+\FP@rega=\count184
+\FP@regb=\count185
+\FP@regs=\count186
+\FP@times=\count187
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fp\fp-addons.sty"
 Package: fp-addons 1995/03/15
@@ -738,7 +767,7 @@ Package: fp-pas 1994/08/29
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fp\fp-random.sty"
 Package: fp-random 1995/02/23
-\FPseed=\count169
+\FPseed=\count188
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fp\fp-eqn.sty"
 Package: fp-eqn 1995/04/03
@@ -750,20 +779,20 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks41
-\@dtl@tmpcount=\count170
+\@dtl@tmpcount=\count189
 \dtl@tmplength=\skip65
-\dtl@sortresult=\count171
-\@dtl@numgrpsepcount=\count172
-\@dtl@datatype=\count173
-\dtl@codeA=\count174
-\dtl@codeB=\count175
-\@dtl@foreach@level=\count176
+\dtl@sortresult=\count190
+\@dtl@numgrpsepcount=\count191
+\@dtl@datatype=\count192
+\dtl@codeA=\count193
+\dtl@codeB=\count194
+\@dtl@foreach@level=\count195
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\glossaries\base\glossaries-compatible-3
 07.sty"
 Package: glossaries-compatible-307 2018/04/07 v4.37 (NLCT)
 )
-\gls@level=\count177
+\gls@level=\count196
 \@gls@tmpb=\toks42
 \gls@tmplen=\skip66
 \glskeylisttok=\toks43
@@ -786,7 +815,7 @@ Package: glossary-super 2018/04/07 v4.37 (NLCT)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\supertabular\supertabular.sty"
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
-\c@tracingst=\count178
+\c@tracingst=\count197
 \ST@wd=\dimen193
 \ST@rightskip=\skip70
 \ST@leftskip=\skip71
@@ -912,35 +941,62 @@ LaTeX Warning: Label `eq:Int01' multiply defined.
 
 LaTeX Warning: Label `eq:Int00' multiply defined.
 
+
+LaTeX Warning: Label `fig:varyQ14' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:varyQ14' multiply defined.
+
+
+LaTeX Warning: Label `fig:varyQ24' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:varyQ24' multiply defined.
+
+
+LaTeX Warning: Label `fig:varyQ34' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:varyQ34' multiply defined.
+
+
+LaTeX Warning: Label `fig:varyQ44' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:varyQ44' multiply defined.
+
+
+LaTeX Warning: Label `eq:LSInt00' multiply defined.
+
 )
 \openout1 = `PC_REPORT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
  ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count179
+\scratchcounter=\count198
 \scratchdimen=\dimen263
 \scratchbox=\box69
-\nofMPsegments=\count180
-\nofMParguments=\count181
+\nofMPsegments=\count199
+\nofMParguments=\count266
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count182
+\MPscratchCnt=\count267
 \MPscratchDim=\dimen264
-\MPnumerator=\count183
-\makeMPintoPDFobject=\count184
+\MPnumerator=\count268
+\makeMPintoPDFobject=\count269
 \everyMPtoPDFconversion=\toks48
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -955,7 +1011,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count185
+\c@lstlisting=\count270
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
@@ -977,7 +1033,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-Package hyperref Info: Link coloring OFF on input line 61.
+Package hyperref Info: Link coloring OFF on input line 66.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -985,24 +1041,24 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count186
+\c@section@level=\count271
 )
-LaTeX Info: Redefining \ref on input line 61.
-LaTeX Info: Redefining \pageref on input line 61.
-LaTeX Info: Redefining \nameref on input line 61.
+LaTeX Info: Redefining \ref on input line 66.
+LaTeX Info: Redefining \pageref on input line 66.
+LaTeX Info: Redefining \nameref on input line 66.
 
 (PC_REPORT.out) (PC_REPORT.out)
 \@outlinefile=\write5
 \openout5 = `PC_REPORT.out'.
 
  (PC_REPORT.glsdefs)
-<Figures/UOB_Logo.png, id=42, 215.80624pt x 88.33pt>
+<Figures/UOB_Logo.png, id=58, 215.80624pt x 88.33pt>
 File: Figures/UOB_Logo.png Graphic file (type png)
 <use Figures/UOB_Logo.png>
-Package pdftex.def Info: Figures/UOB_Logo.png  used on input line 97. on input 
-line 97.
+Package pdftex.def Info: Figures/UOB_Logo.png  used on input line 102. on input
+ line 102.
 Package pdftex.def Info: Requested size: 187.89912pt x 76.9098pt on input line 
-97.
+102.
  [1
 
 {C:/Users/xav_m/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Figures/U
@@ -1023,15 +1079,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.123 \clearpage
+l.128 \clearpage
                  [1]
-<Figures/SplitIntoElements.PNG, id=75, 617.80812pt x 276.53313pt>
+<Figures/SplitIntoElements.PNG, id=111, 617.80812pt x 276.53313pt>
 File: Figures/SplitIntoElements.PNG Graphic file (type png)
 <use Figures/SplitIntoElements.PNG>
-Package pdftex.def Info: Figures/SplitIntoElements.PNG  used on input line 142.
- on input line 142.
+Package pdftex.def Info: Figures/SplitIntoElements.PNG  used on input line 147.
+ on input line 147.
 Package pdftex.def Info: Requested size: 352.31624pt x 157.70146pt on input lin
-e 142.
+e 147.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1042,13 +1098,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1
 
  <./Figures/SplitIntoElements.PNG>]
-<Figures/Local2Standard.PNG, id=92, 660.96938pt x 281.55188pt>
+<Figures/Local2Standard.PNG, id=128, 660.96938pt x 281.55188pt>
 File: Figures/Local2Standard.PNG Graphic file (type png)
 <use Figures/Local2Standard.PNG>
-Package pdftex.def Info: Figures/Local2Standard.PNG  used on input line 180. on
- input line 180.
+Package pdftex.def Info: Figures/Local2Standard.PNG  used on input line 185. on
+ input line 185.
 Package pdftex.def Info: Requested size: 352.31624pt x 150.081pt on input line 
-180.
+185.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1057,12 +1113,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2 <./Figures/Local2Standard.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 247--250
+Underfull \hbox (badness 10000) in paragraph at lines 252--255
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 
  []
 
@@ -1073,12 +1129,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
@@ -1089,25 +1145,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 
-Package caption Warning: \label without proper reference on input line 327.
+Package caption Warning: \label without proper reference on input line 332.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:unittest1' on page 5 undefined on input line 323.
+LaTeX Warning: Reference `fig:unittest1' on page 5 undefined on input line 328.
 
 
-<Figures/CW1Test.PNG, id=142, 700.11563pt x 412.03937pt>
+<Figures/CW1Test.PNG, id=178, 700.11563pt x 412.03937pt>
 File: Figures/CW1Test.PNG Graphic file (type png)
 <use Figures/CW1Test.PNG>
-Package pdftex.def Info: Figures/CW1Test.PNG  used on input line 328. on input 
-line 328.
+Package pdftex.def Info: Figures/CW1Test.PNG  used on input line 333. on input 
+line 333.
 Package pdftex.def Info: Requested size: 352.31624pt x 207.35207pt on input lin
-e 328.
+e 333.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1118,15 +1174,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
  <./Figures/CW1Test.PNG>]
 
-LaTeX Warning: Reference `eq:reatJ' on page 6 undefined on input line 342.
+LaTeX Warning: Reference `eq:reatJ' on page 6 undefined on input line 347.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
 
  []
 
@@ -1137,7 +1193,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
 
  []
 
@@ -1149,57 +1205,61 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [7]
 
-Package caption Warning: \label without proper reference on input line 445.
+Package caption Warning: \label without proper reference on input line 450.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:LaplaceFig1' on page 8 undefined on input line 44
-3.
+8.
 
 Package epstopdf Info: Source file: <Figures/epsLaplaceFig1.eps>
-(epstopdf)                    date: 2018-11-05 19:28:47
+(epstopdf)                    date: 2018-11-05 19:36:24
 (epstopdf)                    size: 57587 bytes
 (epstopdf)             Output file: <Figures/epsLaplaceFig1-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2018-11-05 19:31:32
+(epstopdf)                    date: 2018-11-05 20:05:58
 (epstopdf)                    size: 23396 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/epsLaplaceFig1-eps-
 converted-to.pdf Figures/epsLaplaceFig1.eps>
-(epstopdf)             \includegraphics on input line 447.
+(epstopdf)             \includegraphics on input line 452.
 Package epstopdf Info: Output file is already uptodate.
-<Figures/epsLaplaceFig1-eps-converted-to.pdf, id=186, pagebox=cropbox, 362.3537
+<Figures/epsLaplaceFig1-eps-converted-to.pdf, id=222, pagebox=cropbox, 362.3537
 4pt x 307.1475pt>
 File: Figures/epsLaplaceFig1-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/epsLaplaceFig1-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/epsLaplaceFig1-eps-converted-to.pdf  used on i
-nput line 447. on input line 447.
+nput line 452. on input line 452.
 Package pdftex.def Info: Requested size: 362.35286pt x 307.14674pt on input lin
-e 447.
+e 452.
 Package epstopdf Info: Source file: <Figures/epsLaplaceFig2.eps>
-(epstopdf)                    date: 2018-11-05 19:28:47
-(epstopdf)                    size: 64349 bytes
+(epstopdf)                    date: 2018-11-05 22:30:58
+(epstopdf)                    size: 62177 bytes
 (epstopdf)             Output file: <Figures/epsLaplaceFig2-eps-converted-to.pd
 f>
+(epstopdf)                    date: 2018-11-05 22:31:10
+(epstopdf)                    size: 23858 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/epsLaplaceFig2-eps-
 converted-to.pdf Figures/epsLaplaceFig2.eps>
-(epstopdf)             \includegraphics on input line 463.
-runsystem(epstopdf --outfile=Figures/epsLaplaceFig2-eps-converted-to.pdf Figure
-s/epsLaplaceFig2.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <Figures/epsLaplaceFig2-eps-converted-to.pd
-f>
-(epstopdf)                    date: 2018-11-05 19:31:43
-(epstopdf)                    size: 24115 bytes.
-<Figures/epsLaplaceFig2-eps-converted-to.pdf, id=188, pagebox=cropbox, 365.365p
-t x 303.1325pt>
+(epstopdf)             \includegraphics on input line 468.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsLaplaceFig2-eps-converted-to.pdf, id=224, pagebox=cropbox, 364.3612
+5pt x 303.1325pt>
 File: Figures/epsLaplaceFig2-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/epsLaplaceFig2-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/epsLaplaceFig2-eps-converted-to.pdf  used on i
-nput line 463. on input line 463.
-Package pdftex.def Info: Requested size: 365.3641pt x 303.13176pt on input line
- 463.
+nput line 468. on input line 468.
+Package pdftex.def Info: Requested size: 364.36035pt x 303.13176pt on input lin
+e 468.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package caption Warning: \label without proper reference on input line 466.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:LaplaceFig2' on page 8 undefined on input line 47
+2.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1208,8 +1268,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8 <./Figures/epsLaplaceFig1-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 511.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1217,12 +1275,380 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [9 <./Figures/epsLaplaceFig2-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 511.
+
+Package caption Warning: \label without proper reference on input line 503.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:DiffReact1' on page 10 undefined on input line 49
+7.
+
+Package epstopdf Info: Source file: <Figures/epsReactDiff1.eps>
+(epstopdf)                    date: 2018-11-05 22:30:59
+(epstopdf)                    size: 63705 bytes
+(epstopdf)             Output file: <Figures/epsReactDiff1-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-11-05 22:31:11
+(epstopdf)                    size: 25360 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsReactDiff1-eps-c
+onverted-to.pdf Figures/epsReactDiff1.eps>
+(epstopdf)             \includegraphics on input line 505.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsReactDiff1-eps-converted-to.pdf, id=246, pagebox=cropbox, 362.35374
+pt x 307.1475pt>
+File: Figures/epsReactDiff1-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsReactDiff1-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsReactDiff1-eps-converted-to.pdf  used on in
+put line 505. on input line 505.
+Package pdftex.def Info: Requested size: 362.35286pt x 307.14674pt on input lin
+e 505.
+
+Package caption Warning: \label without proper reference on input line 514.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:CrossSection' on page 10 undefined on input line 
+512.
+
+<Figures/CrossSection.png, id=249, 477.28313pt x 146.5475pt>
+File: Figures/CrossSection.png Graphic file (type png)
+<use Figures/CrossSection.png>
+Package pdftex.def Info: Figures/CrossSection.png  used on input line 516. on i
+nput line 516.
+Package pdftex.def Info: Requested size: 477.28195pt x 146.54712pt on input lin
+e 516.
+
+Overfull \hbox (7.52696pt too wide) in paragraph at lines 516--517
+ [][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 <./Figures/epsReactDiff1-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `fig:varyQmulti' on page 11 undefined on input line 54
+0.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11 <./Figures/CrossSection.png>]
+Package epstopdf Info: Source file: <Figures/epsVaryQ294.eps>
+(epstopdf)                    date: 2018-11-07 11:46:17
+(epstopdf)                    size: 139581 bytes
+(epstopdf)             Output file: <Figures/epsVaryQ294-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 12:32:42
+(epstopdf)                    size: 63582 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsVaryQ294-eps-con
+verted-to.pdf Figures/epsVaryQ294.eps>
+(epstopdf)             \includegraphics on input line 548.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsVaryQ294-eps-converted-to.pdf, id=271, pagebox=cropbox, 372.39125pt
+ x 303.1325pt>
+File: Figures/epsVaryQ294-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsVaryQ294-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsVaryQ294-eps-converted-to.pdf  used on inpu
+t line 548. on input line 548.
+Package pdftex.def Info: Requested size: 223.13647pt x 181.64038pt on input lin
+e 548.
+Package epstopdf Info: Source file: <Figures/epsVaryQ301.eps>
+(epstopdf)                    date: 2018-11-07 11:46:20
+(epstopdf)                    size: 139369 bytes
+(epstopdf)             Output file: <Figures/epsVaryQ301-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 12:32:44
+(epstopdf)                    size: 63235 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsVaryQ301-eps-con
+verted-to.pdf Figures/epsVaryQ301.eps>
+(epstopdf)             \includegraphics on input line 556.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsVaryQ301-eps-converted-to.pdf, id=272, pagebox=cropbox, 372.39125pt
+ x 303.1325pt>
+File: Figures/epsVaryQ301-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsVaryQ301-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsVaryQ301-eps-converted-to.pdf  used on inpu
+t line 556. on input line 556.
+Package pdftex.def Info: Requested size: 223.13647pt x 181.64038pt on input lin
+e 556.
+Package epstopdf Info: Source file: <Figures/epsVaryQ308.eps>
+(epstopdf)                    date: 2018-11-07 11:46:23
+(epstopdf)                    size: 141602 bytes
+(epstopdf)             Output file: <Figures/epsVaryQ308-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 12:32:45
+(epstopdf)                    size: 64404 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsVaryQ308-eps-con
+verted-to.pdf Figures/epsVaryQ308.eps>
+(epstopdf)             \includegraphics on input line 564.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsVaryQ308-eps-converted-to.pdf, id=273, pagebox=cropbox, 372.39125pt
+ x 303.1325pt>
+File: Figures/epsVaryQ308-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsVaryQ308-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsVaryQ308-eps-converted-to.pdf  used on inpu
+t line 564. on input line 564.
+Package pdftex.def Info: Requested size: 223.13647pt x 181.64038pt on input lin
+e 564.
+Package epstopdf Info: Source file: <Figures/epsVaryQ322.eps>
+(epstopdf)                    date: 2018-11-07 11:46:28
+(epstopdf)                    size: 141504 bytes
+(epstopdf)             Output file: <Figures/epsVaryQ322-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 12:32:47
+(epstopdf)                    size: 64046 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsVaryQ322-eps-con
+verted-to.pdf Figures/epsVaryQ322.eps>
+(epstopdf)             \includegraphics on input line 572.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsVaryQ322-eps-converted-to.pdf, id=274, pagebox=cropbox, 372.39125pt
+ x 303.1325pt>
+File: Figures/epsVaryQ322-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsVaryQ322-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsVaryQ322-eps-converted-to.pdf  used on inpu
+t line 572. on input line 572.
+Package pdftex.def Info: Requested size: 223.13647pt x 181.64038pt on input lin
+e 572.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12
+
+ <./Figures/epsVaryQ294-eps-converted-to.pdf> <./Figures/epsVaryQ301-eps-conver
+ted-to.pdf> <./Figures/epsVaryQ308-eps-converted-to.pdf> <./Figures/epsVaryQ322
+-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figures/epsVaryTL1.eps>
+(epstopdf)                    date: 2018-11-07 11:46:31
+(epstopdf)                    size: 141069 bytes
+(epstopdf)             Output file: <Figures/epsVaryTL1-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 12:32:48
+(epstopdf)                    size: 67329 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsVaryTL1-eps-conv
+erted-to.pdf Figures/epsVaryTL1.eps>
+(epstopdf)             \includegraphics on input line 591.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsVaryTL1-eps-converted-to.pdf, id=292, pagebox=cropbox, 372.39125pt 
+x 303.1325pt>
+File: Figures/epsVaryTL1-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsVaryTL1-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsVaryTL1-eps-converted-to.pdf  used on input
+ line 591. on input line 591.
+Package pdftex.def Info: Requested size: 223.13647pt x 181.64038pt on input lin
+e 591.
+Package epstopdf Info: Source file: <Figures/epsVaryTL2.eps>
+(epstopdf)                    date: 2018-11-07 11:46:33
+(epstopdf)                    size: 141931 bytes
+(epstopdf)             Output file: <Figures/epsVaryTL2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 12:32:49
+(epstopdf)                    size: 67664 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsVaryTL2-eps-conv
+erted-to.pdf Figures/epsVaryTL2.eps>
+(epstopdf)             \includegraphics on input line 599.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsVaryTL2-eps-converted-to.pdf, id=293, pagebox=cropbox, 372.39125pt 
+x 303.1325pt>
+File: Figures/epsVaryTL2-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsVaryTL2-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsVaryTL2-eps-converted-to.pdf  used on input
+ line 599. on input line 599.
+Package pdftex.def Info: Requested size: 223.13647pt x 181.64038pt on input lin
+e 599.
+Package epstopdf Info: Source file: <Figures/epsVaryTL4.eps>
+(epstopdf)                    date: 2018-11-07 11:46:37
+(epstopdf)                    size: 141847 bytes
+(epstopdf)             Output file: <Figures/epsVaryTL4-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 12:32:50
+(epstopdf)                    size: 67634 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsVaryTL4-eps-conv
+erted-to.pdf Figures/epsVaryTL4.eps>
+(epstopdf)             \includegraphics on input line 607.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsVaryTL4-eps-converted-to.pdf, id=294, pagebox=cropbox, 372.39125pt 
+x 303.1325pt>
+File: Figures/epsVaryTL4-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsVaryTL4-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsVaryTL4-eps-converted-to.pdf  used on input
+ line 607. on input line 607.
+Package pdftex.def Info: Requested size: 223.13647pt x 181.64038pt on input lin
+e 607.
+Package epstopdf Info: Source file: <Figures/epsVaryTL5.eps>
+(epstopdf)                    date: 2018-11-07 11:46:39
+(epstopdf)                    size: 140521 bytes
+(epstopdf)             Output file: <Figures/epsVaryTL5-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 12:32:52
+(epstopdf)                    size: 67076 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsVaryTL5-eps-conv
+erted-to.pdf Figures/epsVaryTL5.eps>
+(epstopdf)             \includegraphics on input line 615.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsVaryTL5-eps-converted-to.pdf, id=295, pagebox=cropbox, 372.39125pt 
+x 303.1325pt>
+File: Figures/epsVaryTL5-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsVaryTL5-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsVaryTL5-eps-converted-to.pdf  used on input
+ line 615. on input line 615.
+Package pdftex.def Info: Requested size: 223.13647pt x 181.64038pt on input lin
+e 615.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13
+
+ <./Figures/epsVaryTL1-eps-converted-to.pdf> <./Figures/epsVaryTL2-eps-converte
+d-to.pdf> <./Figures/epsVaryTL4-eps-converted-to.pdf> <./Figures/epsVaryTL5-eps
+-converted-to.pdf>]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 629.
+
+
+LaTeX Warning: Reference `fig:mesh01' on page 14 undefined on input line 631.
+
+Package epstopdf Info: Source file: <Figures/epsMesh01.eps>
+(epstopdf)                    date: 2018-11-07 13:26:18
+(epstopdf)                    size: 96331 bytes
+(epstopdf)             Output file: <Figures/epsMesh01-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 14:28:39
+(epstopdf)                    size: 40566 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsMesh01-eps-conve
+rted-to.pdf Figures/epsMesh01.eps>
+(epstopdf)             \includegraphics on input line 635.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsMesh01-eps-converted-to.pdf, id=313, pagebox=cropbox, 372.39125pt x
+ 303.1325pt>
+File: Figures/epsMesh01-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsMesh01-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsMesh01-eps-converted-to.pdf  used on input 
+line 635. on input line 635.
+Package pdftex.def Info: Requested size: 372.39034pt x 303.13176pt on input lin
+e 635.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14
+
+ <./Figures/epsMesh01-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figures/epsMesh11.eps>
+(epstopdf)                    date: 2018-11-07 13:26:18
+(epstopdf)                    size: 95348 bytes
+(epstopdf)             Output file: <Figures/epsMesh11-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 14:28:40
+(epstopdf)                    size: 39828 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsMesh11-eps-conve
+rted-to.pdf Figures/epsMesh11.eps>
+(epstopdf)             \includegraphics on input line 643.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsMesh11-eps-converted-to.pdf, id=321, pagebox=cropbox, 392.46625pt x
+ 305.14pt>
+File: Figures/epsMesh11-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsMesh11-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsMesh11-eps-converted-to.pdf  used on input 
+line 643. on input line 643.
+Package pdftex.def Info: Requested size: 223.13647pt x 173.48927pt on input lin
+e 643.
+Package epstopdf Info: Source file: <Figures/epsMesh12.eps>
+(epstopdf)                    date: 2018-11-07 13:26:19
+(epstopdf)                    size: 96278 bytes
+(epstopdf)             Output file: <Figures/epsMesh12-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 14:28:41
+(epstopdf)                    size: 39853 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/epsMesh12-eps-conve
+rted-to.pdf Figures/epsMesh12.eps>
+(epstopdf)             \includegraphics on input line 651.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/epsMesh12-eps-converted-to.pdf, id=322, pagebox=cropbox, 392.46625pt x
+ 305.14pt>
+File: Figures/epsMesh12-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/epsMesh12-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/epsMesh12-eps-converted-to.pdf  used on input 
+line 651. on input line 651.
+Package pdftex.def Info: Requested size: 223.13647pt x 173.48927pt on input lin
+e 651.
+
+
+Package caption Warning: \label without proper reference on input line 633.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:fullviewmesh' on page 15 undefined on input line 
+661.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15
+
+ <./Figures/epsMesh11-eps-converted-to.pdf> <./Figures/epsMesh12-eps-converted-
+to.pdf>]
+
+LaTeX Warning: Reference `eq:2bDRform' on page 16 undefined on input line 677.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--740
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 830.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 830.
  (PC_REPORT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 511.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 511.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 830.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 830.
 Package rerunfilecheck Info: File `PC_REPORT.out' has not changed.
-(rerunfilecheck)             Checksum: A215D771A7ABC5B4ACC313E408546DCD;707.
+(rerunfilecheck)             Checksum: A86C02EC88875EB39ED09E47464B172E;999.
 
 
 LaTeX Warning: There were undefined references.
@@ -1230,16 +1656,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 511.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 830.
  ) 
 Here is how much of TeX's memory you used:
- 25668 strings out of 493312
- 483097 string characters out of 3138898
- 627825 words of memory out of 3000000
- 28638 multiletter control sequences out of 15000+200000
+ 26183 strings out of 493312
+ 492227 string characters out of 3138898
+ 735599 words of memory out of 3000000
+ 29094 multiletter control sequences out of 15000+200000
  11316 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,20n,77p,1998b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,20n,77p,1998b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiK
@@ -1254,9 +1680,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmti12.pfb>
-Output written on PC_REPORT.pdf (11 pages, 347665 bytes).
+Output written on PC_REPORT.pdf (20 pages, 1084441 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 439 PDF objects out of 1000 (max. 8388607)
+ 110 named destinations out of 1000 (max. 500000)
+ 212 words of extra memory for PDF output out of 10000 (max. 10000000)
 

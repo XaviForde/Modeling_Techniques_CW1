@@ -85,7 +85,7 @@ for i = 1:length(ne)
 end
 xlabel('0 $\leq$ $x$ \ in \ metres  $\leq$ 0.01','interpreter','latex', 'FontSize', 12);
 ylabel('Temperature in Kelvin', 'interpreter','latex', 'FontSize', 12);
-title('Comparing Mesh Sizes', 'interpreter' ,'latex', 'FontSize', 12)
+title('Invesigation of Mesh Size', 'interpreter' ,'latex', 'FontSize', 12)
 lgd = legend({num2str(ne(1)), num2str(ne(2)), num2str(ne(3)) , num2str(ne(4)), num2str(ne(5))}, 'interpreter', 'latex', 'Location', 'northeast');
 lgd.Title.String = 'Number Of Elements';
 print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh01'
@@ -94,9 +94,9 @@ ylim([310.92 310.97]);
 yticks(310.92:.005:310.97)
 print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh11'
 xlim([1.556e-3 1.563e-3]);
-ylim([310 310.05]);
-yticks(310:.005:310.05);
-print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh12'
+ylim([310 310.07]);
+yticks(310:.005:310.07);
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh01'
 %% Second part with linear source term
 f_linear = 4*Q*T_L;
 mesh = StaticReactDiffSolver(-Q, k, xmin, xmax, 100,  f_scalar,f_linear, BC);

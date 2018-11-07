@@ -8,8 +8,10 @@
 \setlength\textwidth{6.5in}
 \setlength\oddsidemargin{0in}
 \setlength\evensidemargin{0in}
+\setlength{\parindent}{0pt}
 \usepackage{placeins}
-\usepackage{indentfirst}
+%\usepackage{indentfirst}
+
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -22,6 +24,9 @@
 \usepackage{hyperref}
 \usepackage{longtable}
 \usepackage[toc,page]{appendix}
+%For The 2x2 Figure
+\usepackage{subcaption}
+\usepackage{mwe}
 %Glossary
 \usepackage[acronym,nonumberlist]{glossaries}
 %\glsaddall %includes all acronymns
@@ -369,7 +374,7 @@ Int_{10} & Int_{11}
 c_{0} \\  c_{1} 
 \end{bmatrix}
 \end{equation}
-
+\\
 We shall now evaluate the $Int_{nm}$ integrals to derive the matrix.
 
 \underline{$Int_{00}$} \\
@@ -461,14 +466,328 @@ c = 0 \ \ at \ \  x= 1
 \begin{figure}[h!] \label{fig:LaplaceFig2}
     \centering
     \includegraphics{epsLaplaceFig2}
-    \caption{Comparison of Analytical and Finite Element Solutions of Laplace's Equation}
+    \caption{Using the FEM to solve Laplace's Equation with an initial Neumann Boundary}
 \end{figure}
+
+The solution found using the FEM method with a 4 element mesh is plotted in Figure \ref{fig:LaplaceFig2}. The solution is still linear which is expected but the effect of change the initial boundary condition from $c = 2$ to $\frac{\partial c}{\partial x} = 2$ has meant c$c = -2$ at $x = 0$. This is to be expected as the function is linear and therefore has a constant gradient over the domain which is defined by the Neumann condition. As the Dirichlet Boundary is fixed at $c = 0$ at $x = 1$ in order to achieve the gradient $\frac{\partial c}{\partial x} = 2$ then we must have $c = -2$ at $x = 0$. The same result could be achieved with a Dirichlet boundary of $c = -2$ at $x = 0$.
+
+\subsection{Question 1d}
+
+We will now test that the FEM solver deals with reaction terms correctly by solving the diffusion-reaction equation:
+
+\begin{equation*}
+D \frac{\partial^2 c}{\partial x^2} + \lambda c = 0
+\end{equation*}
+
+with the following parameters:
+
+\begin{equation*}
+D = 1, \ \  \lambda = -9
+\end{equation*}
+
+and the Dirichlet boundary conditions:
+
+
+\begin{align*}
+c = 0 \ \ at \ \ x = 0 \\
+c = 1 \ \ at \ \  x= 1  .
+\end{align*}
+
+
+The analytical solution is given by equation \ref{eq:diffreactanalytical}. This has been plotted on Figure \ref{fig:DiffReact1} along with the Finite Element Method solution for a range of mesh sizes. It can be seen how the FEM converges on the analytical solution as the mesh size is increased. For a mesh size of 3 elements there is a clear deviation from the analytical solution. This divergence is clearer towards $x = 1$ where the gradient of the analytical solution changes the most and the linear assumption is least valid. However once the a mesh size is increased to 10 elements the plot is difficult to distinguish from the analytical solution and by 25 elements the error is less than 1\%.
+
+\begin{equation}\label{eq:diffreactanalytical}
+c(x) = \frac{e^3 }{e^6 - 1} (3e^{3x} - 3e^{-3x})
+\end{equation}
+
+\begin{figure}[h!] \label{fig:DiffReact1}
+    \centering
+    \includegraphics{epsReactDiff1}
+    \caption{Using the FEM to solve Diffusion-Reaction Equation with Dirichlet Boundary Conditions}
+\end{figure}
+
 
 \section{Part 2}
 
+For part 2 we will use the FEM method to find the temperature profile through a material filled with small diameter heating channels. The cross section of the material is shown in Figure \ref{fig:CrossSection} and approximates to a 1D heat transfer problem given by equation \ref{eq:part2analytical1}.
+
+\begin{figure}[h!] \label{fig:CrossSection}
+    \centering
+    \includegraphics{CrossSection}
+    \caption{Cross Section of Material }
+\end{figure}
+
+\begin{equation} \label{eq:part2analytical1}
+k \frac{\partial^2 T}{\partial x^2} + Q(T_L - T) = 0
+\end{equation}
+
+We can rewrite this equation into the general diffusion-reaction equation form given by equation \ref{eq:DRgeneral} which gives us equation \ref{eq:inDRgeneralform}.
+
+\begin{subequations}
+\begin{align}
+D \frac{\partial^2c}{\partial x^2} + \lambda c + f = 0 \label{eq:DRgeneral} \\
+D \frac{\partial^2T}{\partial x^2} + (-Q) T + QT_L = 0 \label{eq:inDRgeneralform}
+\end{align}
+\end{subequations}
+
+We want to solve for a range of liquid flow rates, $Q$, and liquid temperatures, $T_L$ given below with the equivalent FEM input values given in brackets.
+
+\begin{align*}
+&Q = 0.5 \ \text{to} \ 1.5 \ \ \ \ (\lambda = -0.5 \ \text{to} \ -1.5) \\
+&T_L = 294.15K \ \text{to}\ 322.15K \ \ (f =  294.15Q \ \text{to} \ 322.15Q )
+\end{align*}
+
+The equation was solved for a range of values of Q and the results plotted. This was repeated for 4 values of $T_L$ to and the result is shown in Figure \ref{fig:varyQmulti}. \\
+\clearpage
 
 
-\pagebreak
+\begin{figure*}[ht] 
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{epsVaryQ294}
+            \caption[Network2]%
+            {{\small  1}}    
+            \label{fig:varyQ14}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{epsVaryQ301}
+            \caption[]%
+            {{\small }}    
+            \label{fig:varyQ24}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{epsVaryQ308}
+            \caption[]%
+            {{\small }}    
+            \label{fig:varyQ34}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{epsVaryQ322}
+            \caption[]%
+            {{\small }}    
+            \label{fig:varyQ44}
+        \end{subfigure}
+        \caption[ The Effect of Varying the Liquid Flow Rate on Temperature Distribution and Gradient]
+        {\small The Effect of Varying the Liquid Flow Rate on Temperature Distribution and Gradient} 
+        \label{fig:mean and std of nets}
+    \end{figure*}
+
+The effect of increasing the liquid flow rate is to bring the temperature profile towards the liquid temperature. This is most evident when their is a large differential temperature between the liquid and a boundary condition as a large temperature differential means a lot of heat can be transferred. For example in Figure \ref{fig:varyQ14} the liquid temperature is much cooler than the left hand boundary and so is heated by the material. As the thermal energy is transferred to the liquid its temperature rises reducing the differential temperature which reduces the rate of heat transfer. With higher flow rates the liquid temperature does not rise as much and so there is more heat transfer and steeper temperature gradient at and near the LHS boundary compared to the lower flows. 
+
+
+\clearpage
+
+\begin{figure*}[ht] 
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{epsVaryTL1}
+            \caption[Network2]%
+            {{\small  }}    
+            \label{fig:varyQ14}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{epsVaryTL2}
+            \caption[]%
+            {{\small }}    
+            \label{fig:varyQ24}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{epsVaryTL4}
+            \caption[]%
+            {{\small }}    
+            \label{fig:varyQ34}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{epsVaryTL5}
+            \caption[]%
+            {{\small }}    
+            \label{fig:varyQ44}
+        \end{subfigure}
+        \caption[ The Effect of Varying the Liquid Temperature on Temperature Distribution and Gradient ]
+        {\small The Effect of Varying the Liquid Temperature on Temperature Distribution and Gradient} 
+        \label{fig:tempvar}
+    \end{figure*}
+
+Figure \ref{fig:tempvar} show how the liquid temperature determines the curvature of the temperature profile. When the liquid temperature is at 308.15k the temperature profile is relatively linear as this temperature is the mid-point between the two boundary conditions. When the liquid temperature increases the profile becomes more parabolic and convex. Similarly as the temperature decreases the profile becomes more parabolic and concave. Again this effect is more pronounced with higher liquid flows rates.
+
+\clearpage
+
+\subsubsection{Effect of Mesh Size}
+
+To runt he solver efficiently we need the minimum mesh size which provides sufficient resolution. To find the appropriate mesh size the least linear solution needs to be used which is that whith the highest liquid flow rate $Q = 1.5$ and minimum liquid temperature $T_L = 294.15$. The solution for several mesh sizes is shown in Figure \ref{fig:mesh01}. 
+
+\begin{figure}[h!] \label{fig:fullviewmesh}
+    \centering
+    \includegraphics{epsMesh01}
+    \caption{Cross Section of Material }
+\end{figure}
+\clearpage
+\begin{figure*}[ht] 
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{epsMesh11}
+            \caption[Network2]%
+            {{\small  }}    
+            \label{fig:zoommesh1}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{epsMesh12}
+            \caption[]%
+            {{\small }}    
+            \label{fig:zoommesh2}
+        \end{subfigure}
+        \caption[ The Effect of Mesh Size on Temperature Resolution ]
+        {\small The Effect of Mesh Size on Temperature Resolution } 
+        \label{fig:meshzoom}
+    \end{figure*}
+
+An acceptable resolution for temperature is .01K only very specialised an expensive temperature sensors have greater accuracy than this. In Figure \ref{fig:zoommesh1} it appears as though the 35, 50 and 70 element meshes have all converged to well within 0.01k. Figure \ref{fig:zoommesh2} which is at the same scale as Figure \ref{fig:zoommesh1} shows that this convergence does not hold over the entire domain. The 35 element mesh is now approximately .02k above the 70 element mesh however the 50 and 70 element meshes are still within .01K. Figure \ref{fig:zoommesh2} is at one of the points in Figure \ref{fig:fullviewmesh} with the greatest divergence in solutions and so it can be said that a 50 element mesh is provides the required resolution.
+
+\clearpage
+
+\subsection{Question 2b}
+
+\subsubsection{Derivation of Linear Source Term}
+
+The temperature of the liquid is changed to be a function of $x$  resulting in a new governing equation described by equation \ref{eq:2bmain}.
+
+\begin{equation} \label{eq:2bmain}
+k \frac{\partial^2 T}{\partial x^2} + Q(T_L(1 + 4x) - T) = 0
+\end{equation}
+
+
+
+The equation can be rearranged to the standard form as given by equation \ref{eq:DRgeneral} which gives us equation \ref{eq:2bDRform}.
+\begin{equation} \label{eq:2bDFform}
+k \frac{\partial^2 T}{\partial x^2} + (-Q)T + \left [ QT_L + 4QT_Lx \right ] = 0
+\end{equation}
+
+This is the same as equation \ref{eq:inDRgeneralform} but with an extra source term $4QT_Lx$. Therefore the extra source integration we to solve the following integral where the Galerkin formulation has been applied.
+
+\begin{equation*}
+\int_{0}^{1}v4QT_Lx dx
+\end{equation*}
+
+
+Again this integral can be split into a summation of  again split this integration into a sum of elements as shown below for four elements.
+
+\begin{equation*}
+\int_0^1 4QT_Lx dx = \int_0^\frac{1}{4} 4QT_Lx dx + \int_\frac{1}{4}^\frac{2}{4}4QT_Lx  dx + \int_\frac{2}{4}^\frac{3}{4}  4QT_Lx dx + \int_\frac{3}{4}^1 4QT_Lx dx
+\end{equation*}
+
+
+
+Applying the Jacobi to map to the $\zeta$ domain and taking constants out of the integral gives the following.
+
+\begin{equation} \label{eq:LinSJ}
+\int_{x_0}^{x_1} = 4QT_L\int_{-1}^1 vxJ d\zeta
+\end{equation}
+
+To solve this extra term it is necessary to use the basis function for $x$ given by equation \ref{eq:LagrangeX} and shown below as well as the basis function for $v$.
+
+\begin{align*}
+&x = x_{0}\psi_{0}(\zeta) + x_1\psi_{1}(\zeta) \\
+&v = \psi_{0}, \psi_{1}
+\end{align*}
+
+As before this gives a set of two integrals which can be written in matrix form as shown below.
+
+
+\begin{subequations}
+\label{eq:linSsim}
+\begin{align}
+&4QT_LJ \left  [x_0 \int_{-1}^{1} \psi_{0} \psi_{0} d \zeta + x_1 \int_{-1}^{1} \psi_{1} \psi_{0} d\zeta ) \right ] \label{eq:linsrow1} \\
+&4QT_LJ  \left  [x_0 \int_{-1}^{1} \psi_{0} \psi_{1} d \zeta + x_1 \int_{-1}^{1} \psi_{1} \psi_{1} d\zeta ) \right ]  \label{eq:linsrow2} 
+\end{align}
+\end{subequations}
+
+
+
+\begin{equation} \label{eq:linSmatrix}
+4QT_LJ 
+\begin{bmatrix}
+
+Int_{00} & Int_{01} \\
+Int_{10} & Int_{11}
+\end{bmatrix}
+\begin{bmatrix}
+
+x_{0} \\  x_{1} 
+\end{bmatrix}
+\end{equation}
+
+
+We shall now evaluate the $Int_{nm}$ integrals to derive the matrix. It can be noted that these are the same $Int_{nm}$ terms that were solved to derive the reaction element matrix and so the same result should be found.
+
+\underline{$Int_{00}$} \\
+\begin{equation}\label{eq:LSInt00}
+\begin{split}
+ Int_{00} &= \int_{-1}^{1} \psi_{0}\psi_{0} \ d \zeta \\
+&=  \int_{-1}^{1}  \Big ( \frac{1-\zeta}{2} \Big )^2 d\zeta \\
+& = \left[ \frac{1}{3} \Big ( \frac{1-\zeta}{2} \Big )^3 (-2) \right]_{-1}^{1} \\
+& = \frac{2}{3}
+\end{split}
+\end{equation}
+
+\underline{$Int_{01} = Int_{10}$} \\
+
+\begin{equation}\label{eq:LSInt01}
+\begin{split}
+ Int_{00} &= \int_{-1}^{1} \psi_{0}\psi_{1} \ d \zeta \\
+&=  \int_{-1}^{1}  \Big ( \frac{1-\zeta}{2} \Big )  \Big ( \frac{1+\zeta}{2} \Big )d\zeta \\
+& = \left[ \frac{\zeta}{4} - \frac{\zeta^3}{12}\right]_{-1}^{1} \\
+& = \left[ \frac{1}{6} -  \Big (-\frac{1}{4} + \frac{1}{12} \Big )\right]_{-1}^{1} \\
+& = \frac{1}{3}
+\end{split}
+\end{equation}
+
+\underline{$Int_{11}$} \\
+\begin{equation}\label{eq:LSInt00}
+\begin{split}
+ Int_{00} &= \int_{-1}^{1} \psi_{1}\psi_{1} \ d \zeta \\
+&=  \int_{-1}^{1}  \Big ( \frac{1+\zeta}{2} \Big )^2 d\zeta \\
+& = \left[ \frac{1}{3} \Big ( \frac{1+\zeta}{2}\Big)^3 . 2 \right]_{-1}^{1} \\
+& = \frac{2}{3}
+\end{split}
+\end{equation}
+
+
+
+Now putting substituting these results into the matrix form to get the following solution for the local element vector linear source terms, $f_L$ at the local element nodes 0 and 1. These local linear source nodes can be added to the local 'scalar' source nodes created for the $QT_L$ term, thus deriving the global source matrix needed for the FEM solver.
+
+
+%%%LINEAR SOURCE MATRIX%%%%%%%
+\begin{equation} \label{eq:linSresult}
+\begin{bmatrix}
+f_{L_0}\\[1ex]
+ f_{L_1} 
+\end{bmatrix}
+= 4QT_L J 
+\begin{bmatrix}
+\frac{2}{3} & \frac{1}{3}  \\[1ex]
+ \frac{1}{3}  & \frac{2}{3}
+\end{bmatrix}
+\begin{bmatrix}
+x_{0} \\[1ex] x_{1} 
+\end{bmatrix}
+\end{equation}
 
 
 
