@@ -27,6 +27,10 @@
 %For The 2x2 Figure
 \usepackage{subcaption}
 \usepackage{mwe}
+% To import matlab code
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 %Glossary
 \usepackage[acronym,nonumberlist]{glossaries}
 %\glsaddall %includes all acronymns
@@ -116,7 +120,6 @@
 \tableofcontents
 \thispagestyle{empty}
 \listoffigures
-\listoftables
 
 
 \nomenclature[A]{CAD}{Computer Aided Design}
@@ -139,12 +142,13 @@ Here we will derive the 2-by-2 element matrix for a diffusion operator for an ar
 \int_0^1 D \frac{\partial c}{\partial x}  \frac{\partial v}{\partial x}  dx = \int_0^1 vf dx + \left[vD\frac{\partial c}{\partial x} \right]_0^1
 \end{equation}
 
-We have the domain from $x = 0$ to $ x = 1$ which we can split into $ne$ number of elements. This is shown pictorially below for the case $ne = 4$.
+We have the domain from $x = 0$ to $ x = 1$ which we can split into $ne$ number of elements. This is shown pictorially by Figure \ref{fig:domain2elements} for the case $ne = 4$.
 
 %Figure to show elements on a line
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.75\textwidth]{SplitIntoElements.PNG}
+\caption{Splitting Domain Into Equispaced Elements}\label{fig:domain2elements}
 \end{figure}
 
 We can now say the integral from $x = 0$ to $x = 1$ is equivalent to the sum of the integral of the individual elements, for the $ne = 4$ case:
@@ -170,7 +174,8 @@ v & = \psi_{0} , \psi_{1} \label{eq:LagrangeV} \\
 \end{align}
 \end{subequations}
 for $x$ in that element between $x_0$ and $x_1$.\\
-We need to map the local element to a standard element as shown below. The Jacobian transform $J$ is used to map from the $x$ to the $\zeta$ coordinate system.
+We need to map the local element to a standard element as shown below. The Jacobian transform $J$ is used to map from the $x$ to the $\zeta$ coordinate system as shown in Figure \ref{fig:local2standard}.
+
 
 %Local element to standard element
 \begin{equation} \label{eq:Jacobian}
@@ -183,6 +188,7 @@ J = \left \vert \frac{dx}{d\zeta}\right \vert
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.75\textwidth]{Local2Standard.PNG}
+\caption{Mapping to Standard Element}\label{fig:local2standard}
 \end{figure}
 
 Starting with the left hand side of equation \ref{eq:weakform} transforming with the Jacobian to a standard using $dx = Jd\zeta$ we get:
@@ -211,8 +217,6 @@ Knowing that $\frac{d\zeta}{dx} = J^{-1}$ (for $x_1 > x_0$) from equation \ref{e
 \begin{equation} \label{eq:LHStransform2}
  c_nJ^{-1}\int_{-1}^{1} D \frac{d\psi_{n}}{d\zeta}\frac{d\psi_{m}}{d\zeta} d\zeta \ \ \ \ \text{for} n= 0,1 \& m = 0,1
 \end{equation}
-
-
 
 
 From \ref{eq:LHStransform2} we have two equations, one for each node, which when written in full, is clearly suitable for matrix representation.
@@ -325,12 +329,13 @@ J^{-1}D
 
 \subsubsection{Passes Unit Tests}
 
-Figure \ref{fig:unittest1} shows the function LaplaceElemMatrix.m passes the unit tests defined in CourseworkOneUnitTest.m with no errors.
+Figure \ref{fig:passTest1} shows the function LaplaceElemMatrix.m passes the unit tests defined in CourseworkOneUnitTest.m with no errors.
 
 %Screenshot pass unit test
 \begin{figure}[h!]
-\centering \label{fig:unittest1}
-\includegraphics[width=0.75\textwidth]{CW1Test.PNG}
+	\centering
+	\includegraphics[width=0.75\textwidth]{CW1Test.PNG}
+	\caption{Screenshot of LaplaceElemMatrix.m Function Passing Unit Tests}\label{fig:passTest1}
 \end{figure}
 
 
@@ -421,6 +426,28 @@ J\lambda
 \end{bmatrix}
 \end{equation}
 
+
+%%%UNIT TEST FOR 1BBBBBB \\\\\\\\\\\\\\\\\\\\\\\\\\\%%%%%%%%%%%%
+\subsubsection{Linear Reaction Element Matrix Unit Test}
+
+A test script with four unit tests was made to check that the Linear Reaction Element Matrix function was working correctly. The tests were as follows\\
+\begin{enumerate}
+\item{Check outputted matrix is symmetrical}
+\item{Two outputs for two elements in an equispaced mesh are the same }
+\item{Check against known solution from (from tutorial 3 q2c solution).}
+\item{Element 11 is double the value of element 21 for random mesh size and $\lambda$}
+\end{enumerate}
+
+It is important to test the matrix has all the properties of the matrix derived in equation \ref{eq:reactmatrix}. This includes symmetry, and the lead diagonal symmetric pair being double the anti-diagonal symmetric pair. We also need to check the values are correct as well as the form so the function has been tested against a known result. The function will be also be tested to assert two different elements of an equispaced mesh are identical which confirms the function works over the entire domain and not just the first element. Test 4 has also been conducted for a random mesh size and a random value of $\lambda$ for added assurance. \\
+The function NAMEOFFUNCTIONHERE XXX passes the unit tests as shown by Figure \ref{fig:passTest2}
+
+%Screenshot pass unit test 2222
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{LRtest2.PNG}
+	\caption{Screenshot of LinearReationElemMatrix.m Function Passing Unit Tests}\label{fig:passTest2}
+\end{figure}
+
 \subsubsection{Solving Laplace With Dirichlet Boundaries}
 
 We will use the finite element solver to solve Laplace's equation: 
@@ -447,10 +474,10 @@ c = 2(1-x)
 
 The result of the analytical solution has been plotted in \ref{fig:LaplaceFig1} with the FEM results overlaid. The FEM solution is very accurate here because we have used linear approximations as our basis functions and the analytical solution is also linear. This means we can achieve good results even with a low resolution 4 element mesh.
 
-\begin{figure}[h!] \label{fig:LaplaceFig1}
+\begin{figure}[h!] 
     \centering
     \includegraphics{epsLaplaceFig1}
-    \caption{Comparison of Analytical and Finite Element Solutions of Laplace's Equation}
+    \caption{Comparison of Analytical and Finite Element Solutions of Laplace's Equation}\label{fig:LaplaceFig1}
 \end{figure}
 
 \subsubsection{Add a Neumann Boundary}
@@ -463,10 +490,10 @@ c = 0 \ \ at \ \  x= 1
 \end{align}
 \end{subequations}
 
-\begin{figure}[h!] \label{fig:LaplaceFig2}
+\begin{figure}[h!] 
     \centering
     \includegraphics{epsLaplaceFig2}
-    \caption{Using the FEM to solve Laplace's Equation with an initial Neumann Boundary}
+    \caption{Using the FEM to solve Laplace's Equation with an initial Neumann Boundary}\label{fig:LaplaceFig2}
 \end{figure}
 
 The solution found using the FEM method with a 4 element mesh is plotted in Figure \ref{fig:LaplaceFig2}. The solution is still linear which is expected but the effect of change the initial boundary condition from $c = 2$ to $\frac{\partial c}{\partial x} = 2$ has meant c$c = -2$ at $x = 0$. This is to be expected as the function is linear and therefore has a constant gradient over the domain which is defined by the Neumann condition. As the Dirichlet Boundary is fixed at $c = 0$ at $x = 1$ in order to achieve the gradient $\frac{\partial c}{\partial x} = 2$ then we must have $c = -2$ at $x = 0$. The same result could be achieved with a Dirichlet boundary of $c = -2$ at $x = 0$.
@@ -494,27 +521,29 @@ c = 1 \ \ at \ \  x= 1  .
 \end{align*}
 
 
-The analytical solution is given by equation \ref{eq:diffreactanalytical}. This has been plotted on Figure \ref{fig:DiffReact1} along with the Finite Element Method solution for a range of mesh sizes. It can be seen how the FEM converges on the analytical solution as the mesh size is increased. For a mesh size of 3 elements there is a clear deviation from the analytical solution. This divergence is clearer towards $x = 1$ where the gradient of the analytical solution changes the most and the linear assumption is least valid. However once the a mesh size is increased to 10 elements the plot is difficult to distinguish from the analytical solution and by 25 elements the error is less than 1\%.
+The analytical solution is given by equation \ref{eq:diffreactanalytical}. This has been plotted on Figure \ref{fig:ChangeMesh} along with the Finite Element Method solution for a range of mesh sizes. It can be seen how the FEM converges on the analytical solution as the mesh size is increased. For a mesh size of 3 elements there is a clear deviation from the analytical solution. This divergence is clearer towards $x = 1$ where the gradient of the analytical solution changes the most and the linear assumption is least valid. However once the a mesh size is increased to 10 elements the plot is difficult to distinguish from the analytical solution and by 25 elements the error is less than 1\%.
 
 \begin{equation}\label{eq:diffreactanalytical}
 c(x) = \frac{e^3 }{e^6 - 1} (3e^{3x} - 3e^{-3x})
 \end{equation}
 
-\begin{figure}[h!] \label{fig:DiffReact1}
+\begin{figure}[ht] 
+
     \centering
     \includegraphics{epsReactDiff1}
-    \caption{Using the FEM to solve Diffusion-Reaction Equation with Dirichlet Boundary Conditions}
+    \caption{Using the FEM to solve Diffusion-Reaction Equation with Dirichlet Boundary Conditions}\label{fig:ChangeMesh}
 \end{figure}
 
+\clearpage
 
 \section{Part 2}
 
 For part 2 we will use the FEM method to find the temperature profile through a material filled with small diameter heating channels. The cross section of the material is shown in Figure \ref{fig:CrossSection} and approximates to a 1D heat transfer problem given by equation \ref{eq:part2analytical1}.
 
-\begin{figure}[h!] \label{fig:CrossSection}
+\begin{figure}[h!] 
     \centering
     \includegraphics{CrossSection}
-    \caption{Cross Section of Material }
+    \caption{Cross Section of Material.}\label{fig:CrossSection}
 \end{figure}
 
 \begin{equation} \label{eq:part2analytical1}
@@ -576,7 +605,7 @@ The equation was solved for a range of values of Q and the results plotted. This
         \end{subfigure}
         \caption[ The Effect of Varying the Liquid Flow Rate on Temperature Distribution and Gradient]
         {\small The Effect of Varying the Liquid Flow Rate on Temperature Distribution and Gradient} 
-        \label{fig:mean and std of nets}
+        \label{fig:varyQmulti}
     \end{figure*}
 
 The effect of increasing the liquid flow rate is to bring the temperature profile towards the liquid temperature. This is most evident when their is a large differential temperature between the liquid and a boundary condition as a large temperature differential means a lot of heat can be transferred. For example in Figure \ref{fig:varyQ14} the liquid temperature is much cooler than the left hand boundary and so is heated by the material. As the thermal energy is transferred to the liquid its temperature rises reducing the differential temperature which reduces the rate of heat transfer. With higher flow rates the liquid temperature does not rise as much and so there is more heat transfer and steeper temperature gradient at and near the LHS boundary compared to the lower flows. 
@@ -628,12 +657,12 @@ Figure \ref{fig:tempvar} show how the liquid temperature determines the curvatur
 
 \subsubsection{Effect of Mesh Size}
 
-To runt he solver efficiently we need the minimum mesh size which provides sufficient resolution. To find the appropriate mesh size the least linear solution needs to be used which is that whith the highest liquid flow rate $Q = 1.5$ and minimum liquid temperature $T_L = 294.15$. The solution for several mesh sizes is shown in Figure \ref{fig:mesh01}. 
+To runt he solver efficiently we need the minimum mesh size which provides sufficient resolution. To find the appropriate mesh size the least linear solution needs to be used which is that with the highest liquid flow rate $Q = 1.5$ and minimum liquid temperature $T_L = 294.15$. The solution for several mesh sizes is shown in Figure \ref{fig:fullviewmesh}. 
 
-\begin{figure}[h!] \label{fig:fullviewmesh}
+\begin{figure}[h!]
     \centering
     \includegraphics{epsMesh01}
-    \caption{Cross Section of Material }
+    \caption{Cross Section of Material }\label{fig:fullviewmesh}
 \end{figure}
 \clearpage
 \begin{figure*}[ht] 
@@ -654,11 +683,11 @@ To runt he solver efficiently we need the minimum mesh size which provides suffi
             \label{fig:zoommesh2}
         \end{subfigure}
         \caption[ The Effect of Mesh Size on Temperature Resolution ]
-        {\small The Effect of Mesh Size on Temperature Resolution } 
+        {\small The Effect of Mesh Size on Temperature Resolution} 
         \label{fig:meshzoom}
     \end{figure*}
 
-An acceptable resolution for temperature is .01K only very specialised an expensive temperature sensors have greater accuracy than this. In Figure \ref{fig:zoommesh1} it appears as though the 35, 50 and 70 element meshes have all converged to well within 0.01k. Figure \ref{fig:zoommesh2} which is at the same scale as Figure \ref{fig:zoommesh1} shows that this convergence does not hold over the entire domain. The 35 element mesh is now approximately .02k above the 70 element mesh however the 50 and 70 element meshes are still within .01K. Figure \ref{fig:zoommesh2} is at one of the points in Figure \ref{fig:fullviewmesh} with the greatest divergence in solutions and so it can be said that a 50 element mesh is provides the required resolution.
+An acceptable resolution for temperature is .01K only very specialised and expensive temperature sensors have greater accuracy than this. In Figure \ref{fig:zoommesh1} it appears as though the 35, 50 and 70 element meshes have all converged to well within 0.01k. Figure \ref{fig:zoommesh2}, which is at the same temperature scale as Figure \ref{fig:zoommesh1}, shows that this convergence does not hold over the entire domain. The 35 element mesh is now approximately .02k above the 70 element mesh however the 50 and 70 element meshes are still within .01K. Figure \ref{fig:zoommesh2} is at one of the points in Figure \ref{fig:fullviewmesh} with the greatest divergence in solutions and so it can be said that a 50 element mesh is provides the required resolution.
 
 \clearpage
 
@@ -788,8 +817,50 @@ f_{L_0}\\[1ex]
 x_{0} \\[1ex] x_{1} 
 \end{bmatrix}
 \end{equation}
+\clearpage
 
 
+\subsubsection{Linear Source Results}
+
+\begin{figure*}[ht] 
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{epsLinear294}
+            \caption[Network2]%
+            {{\small  }}    
+            \label{fig:Linear294}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{epsLinear301}
+            \caption[]%
+            {{\small }}    
+            \label{fig:Linear301}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{epsLinear308}
+            \caption[]%
+            {{\small }}    
+            \label{fig:Linear308}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{epsLinear322}
+            \caption[]%
+            {{\small }}    
+            \label{fig:Linear322}
+        \end{subfigure}
+        \caption[ The Effect of Varying the Liquid Temperature on Temperature Distribution and Gradient ]
+        {\small The Effect of Varying the Liquid Temperature on Temperature Distribution and Gradient ($Q =1$)} 
+        \label{fig:LinearF}
+    \end{figure*}
+
+Figure \ref{fig:LinearF} shows how the linear source term, which represents the liquid temperature rising as $x$ increases, raises the temperature profile at the right hand boundary compared to the constant liquid temperature case.
 
 %\begin{thebibliography}{9}
 %%Last name, First Initial, Year published. Title. Publisher, Volume, Page(s).
@@ -804,24 +875,59 @@ x_{0} \\[1ex] x_{1}
 
 %\end{thebibliography}
 
-%\pagebreak
-%
-%\begin{appendices}
-%\section{Cash Flow Statement}
-%
-%\begin{figure}[p]  %nrcVrc Figure
-%	\centering
-%	\includegraphics[width=1.2\textwidth, angle=270]{cashflow1.png}
-%\end{figure} 
-%
-%\begin{figure}[p]  %nrcVrc Figure
-%	\centering
-%	\includegraphics[width=1.2\textwidth, angle=270]{cashflow2.png}
-%\end{figure} 
-%
-%\pagebreak
-%\section{General Arrangement Drawing}
-%\end{appendices}
+\pagebreak
+
+\begin{appendices}
+%%AAAAAAAAAAAAAAAAAAAAAAAAAA%%%%%%%
+\section{Laplace Element Matrix Code}
+\begin{lstlisting}
+function [SqMatrix] = LaplaceElemMatrix(D, eID, msh)
+
+%Returns a local 2x2 element matrix of a given element for a diffusion
+%operator
+% Inputs: 
+% D - Coefficient of Diffusion
+% eID - Index of element within mesh structure
+% msh - Mesh which contains local elements within it's structure
+
+%% Local element matrix for J = 1
+SqMatrix = zeros(2,2);
+SqMatrix(1,1) = 0.5*D;
+SqMatrix(1,2) = -0.5*D;
+SqMatrix(2,1) = -0.5*D;
+SqMatrix(2,2) = 0.5*D;
+
+%% To get local element matrix for this element multiply by dZeta/dx which
+%is equivalent to 1/J 
+
+J = msh.elem(eID).J;  %Get Jacobian for the element
+SqMatrix = (1/J) .* SqMatrix;   %Local element matrix for element eID
+
+end
+\end{lstlisting}
+\pagebreak
+%%%%%%%%BBBBBBBBBBBBBBBBBBBBBB%%%%%%%%%%%%%%%%%
+\section{Linear Reaction Element Matrix Code} \label{ap:ReactCode}
+\begin{lstlisting}
+\end{lstlisting}
+\pagebreak
+%%%%%%%%CCCCCCCCCCCCCCCCCCCC%%%%%%%%%%%%%%%%%
+\section{Linear Reaction Element Matrix Test} \label{ap:ReactTest}
+\begin{lstlisting}
+\end{lstlisting}
+\pagebreak
+%%%%%%%%DDDDDDDDDDDDDDD%%%%%%%%%%%%%
+\section{Apply Boundary Condition Code} \label{ap:BC}
+\begin{lstlisting}
+\end{lstlisting}
+\pagebreak
+
+
+
+
+
+
+\end{appendices}
 
 
 
