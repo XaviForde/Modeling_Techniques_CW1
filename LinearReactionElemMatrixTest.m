@@ -1,4 +1,4 @@
-%%%THIS SCRIPT TESTS LinearReactionElemMatrix.m WORKS CORRECTLY
+%Testing LinearReactionElemMatrix.m creates local reation element vector correctly
 
 %% Test 1: test symmetry of the matrix
 % Test that this matrix is symmetric

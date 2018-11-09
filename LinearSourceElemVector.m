@@ -14,10 +14,10 @@ x1 = mesh.elem(eID).x(2);   %Get he x1 value for the element
 xVector = [x0;x1];          %Create a vector of the x values
 
 %% Local Source Vector with J =1 and f_linear = 1
-StandardVector = [(2/3), (1/3);...
+StandardMatrix = [(2/3), (1/3);...
                   (1/3), (2/3)];
               
 %% Multiply by J, f_linear and the x vector to get Local Linear Source 
 %Vector for the specific element
-ElemVector = J * f_linear *  StandardVector * xVector;
+ElemVector = J * f_linear *  StandardMatrix * xVector;
 end

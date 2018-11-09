@@ -2,7 +2,7 @@
 clear
 clc
 
-%% Question 1c - Solving Laplaces Equation:
+%% QUESTION 1C - Solving Laplaces Equation:
 %% Set Parameter from the question
 D = 1;      %Coefficient of Diffusion
 lambda = 0; %Coefficient of Reaction
@@ -39,10 +39,10 @@ ylabel('c ', 'interpreter','latex', 'FontSize', 12);
 xlabel('0 $\leq x  \leq$ 1','interpreter','latex', 'FontSize', 12);
 legend({'Analytical','FEM'}, 'Interpreter', 'latex')
 xticks(0:.25:1)
-%print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig1'
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig1'
 
 
-%% Now solve with Neumann at x = 0 (Top of page 3)
+%% QUESTION  Now solve with Neumann at x = 0 (Top of page 3)
 %Nuemann Condition
 BC(1).type = "nuemann";
 BC(1).value = 2;

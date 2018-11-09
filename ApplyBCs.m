@@ -13,6 +13,10 @@ function [GlobalMatrix, F] = ApplyBCs(BC, GlobalMatrix, F, ne)
 %GlobalMatrix - formation of local element matrices (NxN matrix)
 %F - Source Vector (size Nx1 vector)
 
+%% If user inputted character arrays change these to strings
+BC(1).type = string(BC(1).type);
+BC(2).type = string(BC(2).type);
+
 %% Solve xmin Boundary Condition 
 if BC(1).type == "none" %No action needed if no boundary condition
     % pass 

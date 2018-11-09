@@ -370,7 +370,7 @@ Figure \ref{fig:passTest1} shows the function LaplaceElemMatrix.m passes the uni
 %Screenshot pass unit test
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.75\textwidth]{CW1Test.PNG}
+	\includegraphics[width=0.8\textwidth]{CW1Test.PNG}
 	\caption{Screenshot of LaplaceElemMatrix.m Function Passing Unit Tests}\label{fig:passTest1}
 \end{figure}
 
@@ -747,8 +747,9 @@ k \frac{\partial^2 T}{\partial x^2} + Q(T_L(1 + 4x) - T) = 0
 
 
 
-The equation can be rearranged to the standard form as given by equation \ref{eq:DRgeneral} which gives us equation \ref{eq:2bDRform}.
-\begin{equation} \label{eq:2bDFform}
+The equation can be rearranged to the standard form as given by equation \ref{eq:DRgeneral} which gives us equation \ref{eq:2bDFform}.
+\begin{equation}
+\label{eq:2bDFform}
 k \frac{\partial^2 T}{\partial x^2} + (-Q)T + \left [ QT_L + 4QT_Lx \right ] = 0
 \end{equation}
 
@@ -758,33 +759,35 @@ This is the same as equation \ref{eq:inDRgeneralform} but with an extra source t
 \int_{0}^{1}vf dx = \int_{0}^{1}v\left [ QT_L + 4QT_Lx \right ] dx
 \end{equation*}
 
-This can be split into the sum of two separate integrals as follows.
+This can be split into the sum of the constant and linear term integrals as shown in equation \ref{eq:LinplusConst}.
 
-\begin{equation*}
-\int_{0}^{1}v\left [ QT_L + 4QT_Lx \right ] dx = \int_{0}^{1}v QT_L dx + 4QT_L\int_{0}^{1}vx dx
-\end{equation*}
+\begin{equation}
+\label{eq:LinplusConst}
+\int_{0}^{1}v\left [ QT_L + 4QT_Lx \right ] dx = \int_{0}^{1}v (QT_L) dx + \int_{0}^{1}v(4QT_Lx) dx
+\end{equation}
 
-Split this integration into a sum of elements as shown below for four elements.
+Dealing with just the linear integral and splitting into summation of elements gives the following.
 
 \begin{equation*}
 \int_0^1 4QT_Lx dx = \int_0^\frac{1}{4} 4QT_Lx dx + \int_\frac{1}{4}^\frac{2}{4}4QT_Lx  dx + \int_\frac{2}{4}^\frac{3}{4}  4QT_Lx dx + \int_\frac{3}{4}^1 4QT_Lx dx
 \end{equation*}
 
 
-Applying the Jacobi to map to the $\zeta$ domain and taking constants out of the integral gives the following.
+Applying the Jacobi to map to the $\zeta$ domain and taking constants out of the integral gives equation \ref{eq:LinSJ2}.
 
-\begin{equation} \label{eq:LinSJ}
-\int_{x_0}^{x_1} = 4QT_L\int_{-1}^1 vxJ d\zeta
+\begin{equation}
+\label{eq:LinSJ2}
+\int_{x_0}^{x_1}v(4QT_Lx) dx = 4QT_L J\int_{-1}^1 vxd \zeta
 \end{equation}
 
-To solve this extra term it is necessary to use the basis function for $x$ given by equation \ref{eq:LagrangeX} and shown below as well as the basis function for $v$.
+To solve this extra term it is necessary to use the basis function for $x$ and $v$ given by equations \ref{eq:LagrangeX} and \ref{eq:LagrangeV} respectively and repeated below.
 
 \begin{align*}
 &x = x_{0}\psi_{0}(\zeta) + x_1\psi_{1}(\zeta) \\
 &v = \psi_{0}, \psi_{1}
 \end{align*}
 
-As before this gives a set of two integrals which can be written in matrix form as shown below.
+As before this results a set of two equations given by equations \ref{eq:linsrow1} and \ref{eq:linsrow2}. These can be represented in the matrix form of equation \ref{eq:linSmatrix}.
 
 
 \begin{subequations}
@@ -811,7 +814,7 @@ x_{0} \\  x_{1}
 \end{equation}
 
 
-We shall now evaluate the $Int_{nm}$ integrals to derive the matrix. It can be noted that these are the same $Int_{nm}$ terms that were solved to derive the reaction element matrix and so the same result should be found.
+Now evaluate the $Int_{nm}$ integrals to derive the matrix. It can be noted that these are the same $Int_{nm}$ terms that were solved to derive the reaction element matrix.
 
 \underline{$Int_{00}$} \\
 \begin{equation}\label{eq:LSInt00}
@@ -847,7 +850,7 @@ We shall now evaluate the $Int_{nm}$ integrals to derive the matrix. It can be n
 
 
 
-Now putting substituting these results into the matrix form to get the following solution for the local element vector linear source terms, $f_L$ at the local element nodes 0 and 1. These local linear source nodes can be added to the local 'scalar' source nodes created for the $QT_L$ term, thus deriving the global source matrix needed for the FEM solver.
+Now substituting these results into the matrix form to get equation \ref{eq:linSresult} for the local element vector linear source terms, $f_L$, at the local element nodes 0 and 1. This equation has been implemented in LinearSourceVector.m function available in Appendix \ref{ap:LSV}.
 
 
 %%%LINEAR SOURCE MATRIX%%%%%%%
@@ -867,6 +870,7 @@ x_{0} \\[1ex] x_{1}
 \end{equation}
 \clearpage
 
+As per equation \ref{eq:LinplusConst} the local linear source vector must be added to the local constant source nodes created for the $QT_L$ term, thus deriving the global source matrix needed for the FEM solver. In SourceVectorGen.m the constant source term and local linear elements are calculated and added to the global source vector in the correct place.
 
 \subsubsection{Linear Source Results}
 
@@ -950,7 +954,6 @@ J = msh.elem(eID).J;  %Get Jacobi for the element
 
 SqMatrix = (1/J) * D * SqMatrix;   %Local element matrix for element eID
 end
-
 \end{lstlisting}
 \pagebreak
 
@@ -1027,12 +1030,15 @@ J = msh.elem(eID).J;  %Get Jacobi for the element
 
 SqMatrix = J * lambda .* SqMatrix;   %Local Linear Reaction matrix for element eID
 end
+
 \end{lstlisting}
+
 \pagebreak
+
 %%%%%%%%CCCCCCCCCCCCCCCCCCCC%%%%%%%%%%%%%%%%%
 \section{Linear Reaction Element Matrix Test} \label{ap:ReactTest}
 \begin{lstlisting}
-%%%THIS SCRIPT TESTS LinearReactionElemMatrix.m WORKS CORRECTLY
+%Testing LinearReactionElemMatrix.m creates local reation element vector correctly
 
 %% Test 1: test symmetry of the matrix
 % Test that this matrix is symmetric
@@ -1089,9 +1095,9 @@ msh = OneDimLinearMeshGen(0,1,ne);
 elemat1 = LinearReactionElemMatrix(lambda,eID,msh);
 elem = elemat1(1,1)/elemat1(2,1); %Gets ratio between 1,1 and 2,1 elements
 assert(abs(elem - 2) <= tol)     %Checks ratio is 2 within the tolerance
+
 \end{lstlisting}
 \pagebreak
-
 
 
 
@@ -1112,6 +1118,10 @@ function [GlobalMatrix, F] = ApplyBCs(BC, GlobalMatrix, F, ne)
 %
 %GlobalMatrix - formation of local element matrices (NxN matrix)
 %F - Source Vector (size Nx1 vector)
+
+%% If user inputted character arrays change these to strings
+BC(1).type = string(BC(1).type);
+BC(2).type = string(BC(2).type);
 
 %% Solve xmin Boundary Condition 
 if BC(1).type == "none" %No action needed if no boundary condition
@@ -1147,7 +1157,6 @@ elseif BC(2).type == "nuemann"    %solve nuemann BC
     F(end) = F(end) + BC(2).value;
 end   
 end
-
 \end{lstlisting}
 \pagebreak
 
@@ -1157,15 +1166,15 @@ end
 \section{Static Diffusion-Reaction Solver Code}
 \label{ap:SDRS}
 \begin{lstlisting}
-function [mesh] = StaticReactDiffSolver(lambda, D, xmin, xmax, ne,f_scalar, f_linear,  BC)
-%%% Solves the static reaction diffusion equation
+function [mesh] = StaticReactDiffSolver(D, lambda, xmin, xmax, ne,f_constant, f_linear,  BC)
+%%% Solves the static diffusion-reaction equation
 % Inputs:
 % lambda - Coefficient for Reaction (float ot int)
 % D - Coefficient of Diffusion (float or int)
 % xmin - Minimum value for x, usually 0(float or int)
 % xmax - Maximum value for x, usually 1(float or int)
 % ne - Number of Elements in Mesh (float)
-% f_scalar - Constant Source Term (float or int)
+% f_constant - Constant Source Term (float or int)
 % f_linear - Linear Source Term (float or int)
 %BC - Structure which contains the following:
 %       BC(1) - Holds data for minimum x boundary
@@ -1176,17 +1185,47 @@ function [mesh] = StaticReactDiffSolver(lambda, D, xmin, xmax, ne,f_scalar, f_li
 
 mesh = OneDimLinearMeshGen(xmin, xmax, ne); %Generate Mesh
 
-GlobalMatrix = zeros((ne+1),(ne+1));  %Initiate Global Matrix
+%% Generate the Global Matrix for Diffusion and Reaction terms
+GlobalMatrix = GlobalMatrixGen(mesh, D, lambda);
 
-%% Generate the source the vector
-F = SourceVectorGen(mesh, f_scalar, f_linear);
+%% Generate the Global source the vector
+F = SourceVectorGen(mesh, f_constant, f_linear);
 
-%% Assemble local element matrices into global matrix
+%% Apply Boundary Conditions to the Global Matrix and Global Source Vector
+[GlobalMatrix, F] = ApplyBCs(BC, GlobalMatrix, F, ne);
+
+%% Solve for C
+C = GlobalMatrix \ F;       %Returns a vector of C values
+
+%Add values of C into the mesh structure
+mesh.c = C;
+
+end
+
+
+\end{lstlisting}
+\pagebreak
+
+%%%%%%%GLOBAL MATRIX%%%%%%%%%%%%%%%%
+\section{Global Matrix Generator Code}
+\label{ap:GM}
+\begin{lstlisting}
+function [GlobalMatrix] = GlobalMatrixGen(mesh, D, lambda)
+%Returns Global Matrix of Difusion and Reaction terms
+% Inputs:
+% lambda - Coefficient for Reaction (float ot int)
+% D - Coefficient of Diffusion (float or int)
+
+
+%% Initiate Global Matrix
+ne = mesh.ne;       %Number of Elements
+GlobalMatrix = zeros((ne+1),(ne+1));  
+%% Loop over Elements and Assemble Local Element Matrices into Global Matrix
 for eID = 1:ne
     
     %Calculate Local Element Matrix for Diffusion Term
     DiffusionLocal = LaplaceElemMatrix(D, eID, mesh);
-    
+
     %Calculate Local Element Matrix for Linear Reaction Term
     ReactionLocal = LinearReactionElemMatrix(lambda, eID, mesh);
     
@@ -1197,55 +1236,60 @@ for eID = 1:ne
     GlobalMatrix(eID:(eID+1),eID:(eID+1)) = GlobalMatrix(eID:(eID+1),eID:(eID+1))...
                                             + LocalElementMatrix;
 end
-
-%Apply Boundary Conditions
-[GlobalMatrix, F] = ApplyBCs(BC, GlobalMatrix, F, ne);
-
-%% Solve for C
-C = GlobalMatrix \ F;
-
-%Add values of C into the mesh structure
-for i = 1:length(C)
-    mesh.c(i) = C(i);
-end
-
-end
 \end{lstlisting}
 \pagebreak
 
 %%%%%%%%FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF%%%%%%%%%%%%%
-\section{Source Vector Generator} \label{ap:SVG}
+\section{Source Vector Generator Code} \label{ap:SVG}
 \begin{lstlisting}
-function [F] = SourceVectorGen(mesh, f_scalar, f_linear)
+function [F] = SourceVectorGen(mesh, f_constant, f_linear)
 %Generates source vector
 %Inputs:
 %mesh - Mesh contains local elements and other data in it's structure
-%f_scalar - Constant source term
-%f_linear - Linear source term
+%f_constant - Constant source term
+%f_linear - Linear source term multiplier
 
 ne = mesh.ne;   %Number of elements
-J = mesh.elem(1).J; %Jacobi (assumed equally spaced mesh)
 
-%% Initalise Scalar Part of Source Vector F and add in Scalar Part
-F = ones((ne+1),1);
-F = (2*f_scalar*J) .* F;
-F(1) = f_scalar*J;
-F(end) = f_scalar*J;
+%% Initalise Gloabal Source Vector F
+F = zeros((ne+1),1);     %Initialise Source Vector
 
-%% Add in the Linear Element Matrices
+%% Add in the Constant and Linear Element Vectors and Add to F
 for eID = 1:ne
-    %Caluculat Linear Source Local Element Matrix
-    LinearSourceLocal = LinearSourceElemMatrix(mesh, eID, f_linear);
-    %AddLocal Linear Source into Source Vector at correct location
-    F(eID:(eID+1)) = F(eID:(eID+1)) + LinearSourceLocal;
+    
+    %Caluculate Constant Source Local Element Vectors
+    LocalConstantSource = ConstantSourceElemVector(mesh, eID, f_constant);
+    %Caluculate Linear Source Local Element Vectors
+    LocalLinearSource = LinearSourceElemVector(mesh, eID, f_linear);
+    
+    %Add Linear and Constant Vectors to get Local Source Vector
+    LocalSourceVector = LocalLinearSource + LocalConstantSource;
+    
+    %Add Local Source Vector into Global Source Vector at correct location
+    F(eID:(eID+1)) = F(eID:(eID+1)) + LocalSourceVector;
+end
+\end{lstlisting}
+
+\subsection{Constant Source Element Vector Code}\label{ap:CSV}
+\begin{lstlisting}
+function [ElemVector] = ConstantSourceElemVector(mesh, eID, f_constant)
+% Returns the Local Constant Source Vector for an element
+%
+% Inputs:
+% mesh - Mesh which contains local elements within it's structure and
+%           related variables
+% eID - index for the element within the mesh
+% f_const - Constant source term 
+
+J =mesh.elem(eID).J;        %Get Jacobi for the element
+
+ElemVector = [f_constant*J; f_constant*J];  %each term is fJ
+
 end
 \end{lstlisting}
 \clearpage
 
-
-%%%%%%%%%%%%GGGGGGGGGGGGGGGGGGGGGGGGGG%%%%%%%%%%%%%%%%%%
-
-\section{Linear Source Vector} \label{ap:LSV}
+\subsection{Linear Source Element Vector Code}\label{ap:LSV}
 \begin{lstlisting}
 function [ElemVector] = LinearSourceElemVector(mesh, eID, f_linear)
 % Returns the Local Linear Source Vector for an element
@@ -1263,14 +1307,204 @@ x1 = mesh.elem(eID).x(2);   %Get he x1 value for the element
 xVector = [x0;x1];          %Create a vector of the x values
 
 %% Local Source Vector with J =1 and f_linear = 1
-StandardVector = [(2/3), (1/3);...
+StandardMatrix = [(2/3), (1/3);...
                   (1/3), (2/3)];
               
 %% Multiply by J, f_linear and the x vector to get Local Linear Source 
 %Vector for the specific element
-ElemVector = J * f_linear *  StandardVector * xVector;
+ElemVector = J * f_linear *  StandardMatrix * xVector;
 end
 \end{lstlisting}
+%%%%%%%%%%%%GGGGGGGGGGGGGGGGGGGGGGGGGG%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%EXTRA TESTSSSSSSSSS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{Additional Software Verification}
+%%%%%%%%%%%%%%%GLOBAL TEST%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\subsection{Global Matrix Test}
+\begin{lstlisting}
+%Testing GlobalMatrixGen.m creates global matrix correctly
+
+%% Test 1: test correct number of elements are non zero
+% formula for number of non zeros is 3(n+1) - 2
+
+ne = 24;    %number of mesh elements
+mesh = OneDimLinearMeshGen(0,1,ne); %Generate 20 element mesh
+
+%Calculate Analytical number of zeros
+AnNumNonZeros = 3*(ne+1) - 2;
+%Set Arbitary values for D and lambda
+D = 3;
+lambda = 5.4;
+GlobalMatrix = GlobalMatrixGen(mesh, D, lambda);
+NumNonZeros = nnz(GlobalMatrix); %sum index to get number of zero elements
+
+assert( NumNonZeros == AnNumNonZeros);
+
+%% Test 2: Check first two elements of the first row are the same as the 
+% last two elements of the last row
+tol = 1e-14;
+mesh = OneDimLinearMeshGen(0,1,10); %Generate 10 element mesh
+%Set Arbitary values for D and lambda
+D = 3;
+lambda = 5.4;
+%Generate global matrix
+GlobalMatrix = GlobalMatrixGen(mesh, D, lambda);
+
+%Get first row first two elements
+FirstRowValues = GlobalMatrix(1,1:2);
+%Get last row last two elements
+LastRowValues = GlobalMatrix(end,(end-1):end);
+%Subrtact elements and sum to get total difference
+diff = sum(FirstRowValues - LastRowValues);
+
+assert(abs(diff) < tol) 
+
+%% Test 3: Check non zero values of any two rows are the same as the 
+% excluding first and last row
+tol = 1e-14;
+mesh = OneDimLinearMeshGen(0,1,10); %Generate 10 element mesh
+%Set Arbitary values for D and lambda
+D = 3;
+lambda = 5.4;
+%Generate global matrix
+GlobalMatrix = GlobalMatrixGen(mesh, D, lambda);
+
+%Get third row non zero elements
+ThirdRowValues = GlobalMatrix(3,3:6);
+%Get fith row non zero elements
+FithRowValues = GlobalMatrix(5,5:8);
+%Subrtact elements and sum to get total difference
+diff = sum(ThirdRowValues - FithRowValues);
+
+assert(abs(diff) < tol)
+\end{lstlisting}
+
+%%%%%%%%%%%% BC BC BC BC BC BC BC BC BC BC BC BC BC %%%%%%%%%%%%%%%%%%%%%
+\subsection{Application of Boundary Conditions Test}
+\begin{lstlisting}
+%Testing ApplyBCs.m applies boundary conditions correctly
+
+%% Test 1: Test Dirichlet boundary at xmin sets all but first element of 
+% global matrix to zero
+
+D = 1;
+lambda = 0;
+ne = 6;
+f_constant = 0;
+xmin = 0;
+xmax = 1;
+%Create Boundary Condition Stucture
+BC(1).type = "dirichlet";
+BC(1).value = 2;
+BC(2).type = "none";
+f_linear = 0;
+%Generate Mesh
+mesh = OneDimLinearMeshGen(xmin,xmax,ne);
+%Generate Global Matrix
+GlobalMatrix = GlobalMatrixGen(mesh, D, lambda);
+%Generate source vector
+F = SourceVectorGen(mesh, f_constant, f_linear);
+
+%Apply Boundary Condition
+[GlobalMatrix, F] = ApplyBCs(BC, GlobalMatrix, F, ne);
+
+assert(GlobalMatrix(1,1) ~= 0 && sum(GlobalMatrix(1, 2:end)) ==0) 
+
+%% Test 2: Test for parameters in Test 1 the first source term is equal to
+% Boundary Condition value and all other elements are zero
+
+%Check number of non zero elements in F is 1
+NumNonZeroF = nnz(F);% Gets number of non zero values in F
+
+assert(F(1) == BC(1).value && NumNonZeroF == 1)
+
+%% Test 3: Test that global matrix is unchanged for two nuemann BCs
+D = 2;
+lambda = 0;
+ne = 8;
+f_constant = 1;
+xmin = 0;
+xmax = 1;
+%Create Boundary Condition Stucture
+BC(1).type = "neumann";
+BC(1).value = 2;
+BC(2).type = "nuemann";
+f_linear = 0;
+
+%Generate Mesh
+mesh = OneDimLinearMeshGen(xmin,xmax,ne);
+%Generate Global Matrix
+GlobalMatrixIn = GlobalMatrixGen(mesh, D, lambda);
+%Generate source vector
+F = SourceVectorGen(mesh, f_constant, f_linear);
+
+%Apply the BCs
+[GlobalMatrixOut, F] = ApplyBCs(BC, GlobalMatrixIn, F, ne);
+
+assert(isequal(GlobalMatrixOut, GlobalMatrixIn))
+
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%          RESULTS       %%%%%%%%%%%%%%%%%%%%%%
+\section{Part 1 Results}\label{ap:results1}
+
+\subsection{Question 1a}\label{ap:Q1a}
+
+\section{Part 2 Results}\label{ap:results2}
+
+\subsection{Question 2b Results Script}\label{ap:Q2b}
+\begin{lstlisting}
+%Part 2b, investigating the linear source term
+clear
+clc
+%% Set parameters given in the question
+xmin = 0;
+xmax = .01;
+ne = 100;
+k = 1.01e-5;
+BC(1).type = "dirichlet";
+BC(1).value = 323.15;   %Temperature in Kelvin
+BC(2).type = "dirichlet";
+BC(2).value = 293.15;       %Temperature in Kelvin
+
+%% Set Q = 1 as other values are exaggerations of the same shape
+Q = 1;
+
+%%Plot four graphs at different values of T_L
+color = [0.127, 0.0, 0.8];  %set color for the lines
+for T_L = 294.15:7:322.15    %
+    
+    figure() %initiate next figure
+    
+    %Calculate f_scalar for boundary condition
+    f_constant = Q*T_L;
+    f_linear = 4*Q*T_L;
+    
+    %Solve temperature using FEM with no Linear Source
+    mesh = StaticReactDiffSolver(k, -Q, xmin, xmax, ne, f_constant, 0, BC);
+    plot(mesh.nvec, mesh.c, '--', 'Color', color)
+    hold on
+    %Now solve including the Linear Source
+    mesh = StaticReactDiffSolver(k, -Q, xmin, xmax, ne, f_constant, f_linear, BC);
+    plot(mesh.nvec, mesh.c, '-', 'Color', color)
+    
+    %% Format the figure
+    title(strcat('Effect of Linear Source on Temperature Profile, $T_L = ', num2str(T_L), 'K$'), 'interpreter' ,'latex', 'FontSize', 12)
+    lgd = legend({'Question 2a', 'Question 2b'},'Location', 'northeast', 'interpreter', 'latex');
+    lgd.Title.String = 'Equation';
+    xlabel('$x$ \ in \ Metres','interpreter','latex', 'FontSize', 12);
+    ylabel('Temperature in Kelvin', 'interpreter','latex', 'FontSize', 12);
+    grid on
+    %% Saving Figure
+    str = strcat("\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLinear", num2str(floor(T_L)));
+    %print(str, '-depsc')
+    %% Clear figure
+    hold off
+end
+\end{lstlisting}
+
 \end{appendices}
 
 

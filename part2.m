@@ -23,7 +23,7 @@ for T_L = floor(294.15:7:322.15)
         %Calculate f_scalar for boundary condition
         f_scalar = Q*T_L;
         %Solve temperature using FEM
-        mesh = StaticReactDiffSolver(-Q, k, xmin, xmax, ne, f_scalar, f_linear, BC);
+        mesh = StaticReactDiffSolver(k, -Q, xmin, xmax, ne, f_scalar, f_linear, BC);
         plot(mesh.nvec, mesh.c)
         hold on
 
@@ -37,7 +37,7 @@ for T_L = floor(294.15:7:322.15)
     ylabel('Temperature in Kelvin', 'interpreter','latex', 'FontSize', 12);
     str = strcat("\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsVaryQ", num2str(floor(T_L)));
     grid on 
-    print(str, '-depsc')
+    %print(str, '-depsc')
     hold off
 end
 
@@ -55,7 +55,7 @@ for Q = 0.5:0.25:1.5
         f_scalar = Q*T_L;
         disp(f_scalar)
         %Solve temperature using FEM
-        mesh = StaticReactDiffSolver(-Q, k, xmin, xmax, ne, f_scalar, f_linear, BC);
+        mesh = StaticReactDiffSolver(k, -Q, xmin, xmax, ne, f_scalar, f_linear, BC);
         plot(mesh.nvec, mesh.c)
         hold on
 
@@ -67,7 +67,7 @@ for Q = 0.5:0.25:1.5
     ylabel('Temperature in Kelvin', 'interpreter','latex', 'FontSize', 12);
     str = strcat("\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsVaryTL", num2str(i1));
     grid on
-    print(str, '-depsc')
+    %print(str, '-depsc')
     hold off
 end
 
@@ -80,7 +80,7 @@ for i = 1:length(ne)
     %Calculate f_scalar for boundary condition
     f_scalar = Q*T_L;
     %Solve temperature using FEM
-    mesh = StaticReactDiffSolver(-Q, k, xmin, xmax, ne(i), f_scalar, f_linear, BC);
+    mesh = StaticReactDiffSolver(k, -Q, xmin, xmax, ne(i), f_scalar, f_linear, BC);
     fig1 = plot(mesh.nvec, mesh.c);
     hold on
     
@@ -96,11 +96,11 @@ xlim([1.414e-3 1.416e-3]);
 ylim([310.92 310.97]);
 yticks(310.92:.005:310.97)
 grid on 
-print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh11'
+%print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh11'
 xlim([1.556e-3 1.563e-3]);
 ylim([310 310.05]);
 yticks(310:.005:310.05);
 grid on 
-print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh12'
+%print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh12'
 
 
