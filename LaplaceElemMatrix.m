@@ -1,25 +1,23 @@
 function [SqMatrix] = LaplaceElemMatrix(D, eID, msh)
 
-%Returns a local 2x2 element matrix of a given element for a diffusion
-%operator
+%Returns the local 2x2 element matrix of a given element for a given diffusion
+%coefficient
+%
 % Inputs: 
 % D - Coefficient of Diffusion
 % eID - Index of element within mesh structure
 % msh - Mesh which contains local elements within it's structure
 
-%% Local element matrix for J = 1
-SqMatrix = zeros(2,2);
-SqMatrix(1,1) = 0.5*D;
-SqMatrix(1,2) = -0.5*D;
-SqMatrix(2,1) = -0.5*D;
-SqMatrix(2,2) = 0.5*D;
+%% Form of Laplace Elem matrix for J=1, D=1
 
-%% To get local element matrix for this element multiply by dZeta/dx which
-%is equivalent to 1/J 
+SqMatrix = [0.5, -0.5; ...
+            -0.5, 0.5];
 
-J = msh.elem(eID).J;  %Get Jacobian for the element
-SqMatrix = (1/J) .* SqMatrix;   %Local element matrix for element eID
+%% Multiply  by (1/J) and D to get solution for the particular element
 
+J = msh.elem(eID).J;  %Get Jacobi for the element
+
+SqMatrix = (1/J) * D * SqMatrix;   %Local element matrix for element eID
 end
 
 
