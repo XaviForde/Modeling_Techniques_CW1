@@ -151,7 +151,7 @@ The weak form of this equation after integration by parts will be the starting p
 \subsection{Question 1a}
 \subsubsection{Derivation of Diffusion Element Matrix}
 
-The 2-by-2 element matrix for a diffusion operator for an arbitrary element $e_{n}$ between the points $x_{0}$ $x_{1}$ shall be derived.  The derivation shall start from the weak form version of the static diffusion-reaction equation, after performing integration by parts, which is given by equation \ref{eq:MAINWEAK}.  To obtain the diffusion element matrix only the diffusion integral needs to be evaluated which will be done over the domain $x = 0$ to $x = 1$. The resulting integral to be evaluated is given by equation \ref{eq:weakformdiff}
+The 2-by-2 element matrix for a diffusion operator for an arbitrary element $e_{n}$ between the points $x_{0}$ and $x_{1}$ shall be derived.  The derivation shall start from the weak form version of the static diffusion-reaction equation, after performing integration by parts, which is given by equation \ref{eq:MAINWEAK}.  To obtain the diffusion element matrix only the diffusion integral needs to be evaluated which will be done over the domain $x = 0$ to $x = 1$. The resulting integral to be evaluated is given by equation \ref{eq:weakformdiff}
 
 \begin{equation} \label{eq:weakformdiff}
 \int_0^1 D \frac{\partial c}{\partial x}  \frac{\partial v}{\partial x}  dx 
@@ -165,6 +165,8 @@ The domain from $x = 0$ to $ x = 1$ can be split into $ne$ number of elements. T
 \includegraphics[width=0.75\textwidth]{SplitIntoElements.PNG}
 \caption{Splitting Domain Into Equispaced Elements}\label{fig:domain2elements}
 \end{figure}
+
+\pagebreak
 
 Now the integral from $x = 0$ to $x = 1$ can be split into the sum of the integrals of the individual elements as demonstrated by equation \ref{eq:splitintegral} for the $ne = 4$ case.
 
@@ -225,6 +227,8 @@ J = \left \vert \frac{dx}{d\zeta}\right \vert
 \caption{Mapping to Standard Element}\label{fig:local2standard}
 \end{figure}
 
+\pagebreak
+
 The diffusion integral for a single element can now be mapped to the integral of a standard element using $dx = Jd\zeta$ which is a rearrangement of equation \ref{eq:Jacobian} and equation \ref{eq:LagrangeZeta} to transform the limits of integration. The result is given by equation \ref{eq:LHStransform}.
 
 \begin{equation}
@@ -232,7 +236,7 @@ The diffusion integral for a single element can now be mapped to the integral of
 \int_{x_0}^{x_{1}} D \frac{\partial c}{\partial x}  \frac{\partial v}{\partial x}  dx =  \int_{-1}^{1} D \frac{\partial c}{\partial x}  \frac{\partial v}{\partial x} J d\zeta
 \end{equation}
 
-It is necessary to evaluate the derivatives $\frac{\partial c}{\partial x}$ and $ \frac{\partial v}{\partial x}$ which can be obtain by applying the chain rule to the definitions of $c$ and $v$ given by equations \ref{eq:LagrangeC} and \ref{eq:LagrangeV}. The results are given by equations \ref{eq:LagrangeDC} and \ref{eq:LagrangeDV}.
+It is necessary to evaluate the derivatives $\frac{\partial c}{\partial x}$ and $ \frac{\partial v}{\partial x}$ which can be obtained by applying the chain rule to the definitions of $c$ and $v$ given by equations \ref{eq:LagrangeC} and \ref{eq:LagrangeV}. The results are given by equations \ref{eq:LagrangeDC} and \ref{eq:LagrangeDV}.
 
 \begin{align}\label{eq:LagrangeDC}
 \frac{dc}{dx} &= c_{0}\frac{d\psi_{0}}{d\zeta}\frac{d\zeta}{dx} + c_1\frac{d\psi_{1}}{d\zeta}\frac{d\zeta}{dx}\\
@@ -255,7 +259,7 @@ Knowing that $\frac{d\zeta}{dx} = J^{-1}$ (for $x_1 > x_0$) from equation \ref{e
 \end{equation}
 
 
-Equation \ref{eq:LHStransform3} gives two equations which, when written in full, is clearly suitable for matrix representation.
+Equation \ref{eq:LHStransform3} gives two equations which, when written in full, are clearly suitable for matrix representation.
 
 \begin{subequations}
 \label{eq:matrixform}
@@ -281,6 +285,7 @@ c_{0} \\  c_{1}
 \end{bmatrix}
 \end{equation}
 
+\pagebreak
 %%Evaluate integrals%%%%%%%%%
 Each $Int_{nm}$ term shall now be evaluated individually. In order to evaluate the integrals first the  derivatives of $\psi_0$ and $\psi_{1}$ with respect to $\zeta$ shall be calculated using the definition of the test function given by equation \ref{eq:LagrangePSI}. The results are given by equations 
 
@@ -320,6 +325,9 @@ Each $Int_{nm}$ term shall now be evaluated individually. In order to evaluate t
 \end{split}
 \end{equation}
 
+
+\pagebreak
+
 \underline{$Int_{10}$} \\
 
 
@@ -332,9 +340,6 @@ Each $Int_{nm}$ term shall now be evaluated individually. In order to evaluate t
 & = -\frac{D}{2}
 \end{split}
 \end{equation}
-
-
-\clearpage
 
 \underline{$Int_{11}$} \\
 
@@ -362,7 +367,7 @@ J^{-1}D
 \end{equation}
 
 %%%%PASSING THE UNIT TEST Q1a%%%%%%%%%%%%
-
+\pagebreak
 \subsubsection{Passes Unit Tests}
 
 Figure \ref{fig:passTest1} shows the function LaplaceElemMatrix.m passes the unit tests defined in CourseworkOneUnitTest.m, available in Appendix \ref{ap:CW1}, with no errors.
@@ -374,6 +379,7 @@ Figure \ref{fig:passTest1} shows the function LaplaceElemMatrix.m passes the uni
 	\caption{Screenshot of LaplaceElemMatrix.m Function Passing Unit Tests}\label{fig:passTest1}
 \end{figure}
 
+\FloatBarrier
 
 
 \subsection{Question 1b}
@@ -538,6 +544,8 @@ c = 0 \ \ at \ \  x= 1 \label{eq:LaplaceBCs22}
 \end{figure}
 
 The solution found using the FEM method with a 4 element mesh is plotted in Figure \ref{fig:LaplaceFig2}. The solution is still linear which is expected but the effect of change the initial boundary condition from $c = 2$ to $\frac{\partial c}{\partial x} = 2$ has meant $c = -2$ at $x = 0$. This is to be expected as the function is linear and therefore has a constant gradient over the domain which is defined by the Neumann condition. As the Dirichlet boundary is fixed at $c = 0$ at $x = 1$ in order to achieve the gradient $\frac{\partial c}{\partial x} = 2$ the only solution is $c = -2$ at $x = 0$. The same result could be achieved with a Dirichlet boundary of $c = -2$ at $x = 0$.
+
+\pagebreak
 
 \subsection{Question 1d}
 
@@ -787,6 +795,7 @@ To solve this extra term it is necessary to use the basis function for $x$ and $
 &v = \psi_{0}, \psi_{1}
 \end{align*}
 
+\pagebreak
 As before this results a set of two equations given by equations \ref{eq:linsrow1} and \ref{eq:linsrow2}. These can be represented in the matrix form of equation \ref{eq:linSmatrix}.
 
 
@@ -838,6 +847,8 @@ Now evaluate the $Int_{nm}$ integrals to derive the matrix. It can be noted that
 \end{split}
 \end{equation}
 
+\pagebreak
+
 \underline{$Int_{11}$} \\
 \begin{equation}\label{eq:LSInt00}
 \begin{split}
@@ -868,10 +879,11 @@ f_{L_0}\\[1ex]
 x_{0} \\[1ex] x_{1} 
 \end{bmatrix}
 \end{equation}
-\clearpage
+
 
 As per equation \ref{eq:LinplusConst} the local linear source vector must be added to the local constant source nodes created for the $QT_L$ term, thus deriving the global source matrix needed for the FEM solver. In SourceVectorGen.m the constant source term and local linear elements are calculated and added to the global source vector in the correct place.
 
+\pagebreak
 \subsubsection{Linear Source Results}
 
 \begin{figure*}[ht] 
@@ -930,6 +942,15 @@ Figure \ref{fig:LinearF} shows how the linear source term, which represents the 
 \pagebreak
 
 \begin{appendices}
+
+\section{Flow Chart of FEM Solver}
+
+\begin{figure}[ht]  %nrcVrc Figure
+	\centering
+	\includegraphics[width=1\textwidth]{FLOW.png}
+    \caption{Flow Chart Showing The Process Followed by The FEM solver StaticReactDiffSolver.m}\label{fig:flowchart}
+\end{figure}
+\clearpage
 %%AAAAAAAAAAAAAAAAAAAAAAAAAA%%%%%%%
 \section{Laplace Element Matrix Code}\label{ap:LaplaceElem}
 \begin{lstlisting}
@@ -1448,12 +1469,252 @@ assert(isequal(GlobalMatrixOut, GlobalMatrixIn))
 \end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%          RESULTS       %%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \section{Part 1 Results}\label{ap:results1}
 
-\subsection{Question 1a}\label{ap:Q1a}
+\begin{lstlisting}
+%%% Generate Results for Part 1 Qustions
+clear
+clc
 
+%% Question 1c - Solving Laplaces Equation:
+%Set Parameter from the question
+D = 1;      %Coefficient of Diffusion
+lambda = 0; %Coefficient of Reaction
+ne = 4;     %Number of elements
+f_constant = 0; %No source
+f_linear = 0;   %No source
+xmin = 0;       %Set x domain from x=0 to x=1
+xmax = 1;
+%Create Boundary Condition Stucture
+BC(1).type = "dirichlet";
+BC(1).value = 2;
+BC(2).type = "dirichlet";
+BC(2).value = 0;
+
+%Use the FEM to obtain a solution for C, solution stored as mesh.c
+mesh = StaticReactDiffSolver(D, lambda, xmin, xmax, ne, f_linear, f_constant, BC);
+
+%Create plot points for analytical solution
+xvec = 0:0.25:1;        %Same number of nodes/points as FEM method
+c = zeros(length(xvec),1);  %Initialise C
+% Use the equation given in the question to calculate c values
+for i = 1:length(xvec)
+    c(i) = 2*(1-xvec(i));
+end
+
+%Plot the results
+figure()
+plot(xvec, c, '-xb',mesh.nvec, mesh.c, 'ro');
+grid on
+title('Laplace Equation $\frac{\partial^2 c}{\partial x^2} = 0$', 'interpreter' ,'latex', 'FontSize', 12)
+xlim([0 1]);
+ylim([0 2.5]);
+ylabel('c ', 'interpreter','latex', 'FontSize', 12);
+xlabel('0 $\leq x  \leq$ 1','interpreter','latex', 'FontSize', 12);
+legend({'Analytical','FEM'}, 'Interpreter', 'latex')
+xticks(0:.25:1)
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig1'
+
+
+%Now solve with Neumann at x = 0:
+%Nuemann Boundary
+BC(1).type = "nuemann";
+BC(1).value = 2;
+%Dirichlet Boundary
+BC(2).type = "dirichlet";
+BC(2).value = 0;
+%Solve for new boundary conditions
+mesh = StaticReactDiffSolver(D, lambda, xmin, xmax, ne, f_linear, f_constant, BC);
+
+%Plot the result
+figure()
+plot(mesh.nvec, mesh.c, '-x');
+title('Laplace Equation with Neumann Boundary at $x = 0$', 'interpreter' ,'latex', 'FontSize', 12)
+grid on
+xticks(0:.25:1)
+xlabel('0 $\leq x  \leq$ 1','interpreter','latex', 'FontSize', 12);
+ylabel('c ', 'interpreter','latex', 'FontSize', 12);
+ylim([-2.5 0]);
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsLaplaceFig2'
+
+
+%% QUESTION 1d - Check Reaction Terms are Solved Correctly
+%Set up Parameters from the question
+D = 1;
+lambda = -9;
+BC(1).type = "dirichlet";
+BC(1).value = 0;
+BC(2).type = "dirichlet";
+BC(2).value = 1;
+
+%Analytical solution
+xvec = 0:(1/100):1;
+for i = 1:length(xvec)
+    c(i) = (exp(3)/(exp(6)-1)) * (exp(3*xvec(i)) - exp(-3*xvec(i)));
+end
+
+%Plot the results of FEM and analytical
+figure()
+grid on
+plot(xvec, c, '-b', 'LineWidth', .5)    %Plot analytical solution
+hold on
+
+%Now solve using FEM method with several mesh sizes
+elem_range = [3,5,10,25];   %Mesh sizes to be used
+%Solve for each mesh size and plot
+for i = 1:length(elem_range)
+    ne = elem_range(i);
+    mesh = StaticReactDiffSolver(D, lambda, xmin, xmax, ne, f_linear, f_constant, BC);
+    plot(mesh.nvec, mesh.c, '--')
+    hold on
+end
+%Format the result
+title('Diffusion-Reaction Equation: $\frac{\partial^2 c}{\partial x^2} -9c = 0$', 'interpreter' ,'latex', 'FontSize', 12)
+lgd = legend('Analytical', num2str(elem_range(1)), num2str(elem_range(2)), num2str(elem_range(3)) , num2str(elem_range(4)), 'Location', 'southeast');
+lgd.Title.String = 'Number Of Elements';
+xlabel('0 $\leq x  \leq$ 1','interpreter','latex', 'FontSize', 12);
+ylabel('c ', 'interpreter','latex', 'FontSize', 12);
+%Save the Figure
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsReactDiff1'
+hold off
+\end{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PART 2 RESULTS  %%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \section{Part 2 Results}\label{ap:results2}
 
+\subsection{Question 2a Results Script}\label{ap:Q2a}
+\begin{lstlisting}
+%%%% Part 2a: Modelling and Simultion Results
+% Use FEM solver to solve k.(d^2T/dx^2) + Q(T_L - t) = 0
+clear
+clc
+%% Set parameters given in the question
+xmin = 0;   %Min x in metres
+xmax = .01; % Max x in metres
+ne = 70;    %Number of elements
+k = 1.01e-5;    % Coefficient of diffusion
+%Set Boundary Conditions:
+BC(1).type = "dirichlet";
+BC(1).value = 323.15;   %Temperature in Kelvin
+BC(2).type = "dirichlet";
+BC(2).value = 293.15;       %Temperature in Kelvin
+%No linear source for part a:
+f_linear = 0;
+
+%Initialise counter
+i = 1;
+
+%% Create four plots at different T_L values showing the effect of Q
+for T_L = 294.15:7:322.15   
+
+    figure(i)
+    i = i+1;
+    %Vary Q from 0.5 to 1.5 and plot the variation of results
+    for Q = 0.5:0.25:1.5
+
+        %Calculate f_scalar for boundary condition
+        f_scalar = Q*T_L;
+        %Solve temperature using FEM
+        mesh = StaticReactDiffSolver(k, -Q, xmin, xmax, ne, f_scalar, f_linear, BC);
+        %Plot result
+        plot(mesh.nvec, mesh.c)
+        hold on
+
+    end
+    %Format Figure:
+    title(strcat('Temperature Profile at Various Liquid Flow Rates, $T_L = ', num2str(floor(T_L)), '$'), 'interpreter' ,'latex', 'FontSize', 12)
+    lgd = legend({'$Q = 0.50$', '$Q = 0.75$', '$Q = 1.00$', '$Q = 1.25$' , '$Q = 1.50$'},'Location', 'northeast', 'interpreter', 'latex');
+    lgd.Title.String = 'Liquid Flow Rate';
+    xlabel('$x$ \ in \ Metres ','interpreter','latex', 'FontSize', 12);
+    ylabel('Temperature in Kelvin', 'interpreter','latex', 'FontSize', 12);
+    %Plot T_L to help with visualisation of the result:
+    plot([0 0.01] , [T_L T_L], 'LineStyle','--', 'Color', [.17 .17 .17], 'HandleVisibility','off')
+    text(0.002, (T_L + 1), strcat('$T_L = ', num2str(T_L), '$'), 'interpreter', 'latex')
+    grid on 
+    %Save the figure:
+    str = strcat("\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsVaryQ", num2str(floor(T_L)));
+    print(str, '-depsc')
+    hold off
+end
+
+%% Now we vary T_L in the plots for 4 different Q values
+i1=0; %new counter for indexing saved results
+%Create a plot for each value of Q
+for Q = 0.5:0.25:1.5
+
+    i1 = i1+1;
+    figure()
+    %Vary T_L and plot the variation of results
+    for T_L = 294.15:7:322.15
+
+        %Calculate f_scalar for boundary condition
+        f_scalar = Q*T_L;
+        disp(f_scalar)
+        %Solve temperature using FEM
+        mesh = StaticReactDiffSolver(k, -Q, xmin, xmax, ne, f_scalar, f_linear, BC);
+        %Plot the results
+        plot(mesh.nvec, mesh.c)
+        hold on
+
+    end
+    %Format the Figure:
+    title(strcat('Temperature Profile at Various Liquid Temperatures, $Q = ', num2str(Q), '$'), 'interpreter' ,'latex', 'FontSize', 12)
+    lgd = legend({'$T_L = 294.15$', '$T_L = 301.15$', '$T_L = 308.15$', '$T_L = 315.15$' , '$T_L = 322.15$'},'Location', 'northeast', 'interpreter', 'latex');
+    lgd.Title.String = 'Liquid Temp in K';
+    xlabel('$x$ \ in \ Metres ','interpreter','latex', 'FontSize', 12);
+    ylabel('Temperature in Kelvin', 'interpreter','latex', 'FontSize', 12);
+    grid on
+    %Save the Figure
+    str = strcat("\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsVaryTL", num2str(i1));
+    print(str, '-depsc')
+    hold off
+end
+
+%% Investigate the effect of Mesh size
+figure()
+ne = [10, 25, 35, 50, 70];  %Range of Mesh sizes to investigate
+
+for i = 1:length(ne)
+    Q = 1.5;    %Choose extreme Q value
+    T_L = 294.15;   %Choose extreme T_L value
+    %Calculate f_scalar for boundary condition
+    f_scalar = Q*T_L;
+    %Solve temperature using FEM
+    mesh = StaticReactDiffSolver(k, -Q, xmin, xmax, ne(i), f_scalar, f_linear, BC);
+    %Plot the result
+    fig1 = plot(mesh.nvec, mesh.c);
+    hold on
+    
+end
+%Format the Figure
+xlabel('$x$ \ in \ Metres','interpreter','latex', 'FontSize', 12);
+ylabel('Temperature in Kelvin', 'interpreter','latex', 'FontSize', 12);
+title('Comparing Mesh Sizes', 'interpreter' ,'latex', 'FontSize', 12)
+lgd = legend({num2str(ne(1)), num2str(ne(2)), num2str(ne(3)) , num2str(ne(4)), num2str(ne(5))}, 'interpreter', 'latex', 'Location', 'northeast');
+lgd.Title.String = 'Number Of Elements';
+grid on 
+%Save the Figure
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh01'
+
+%Zoom in on a point where meshes have converged
+xlim([1.414e-3 1.416e-3]);
+ylim([310.92 310.97]);
+yticks(310.92:.005:310.97)
+grid on 
+%Save the Figure
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh11'
+
+%Zoom in on point where meshes are close to maximum diverence
+xlim([1.556e-3 1.563e-3]);
+ylim([310 310.05]);
+yticks(310:.005:310.05);
+grid on 
+%Save the Figure
+print -depsc '\Users\xav_m\OneDrive\Documents\XAVI\University\Final Year\Systems Mod\Modeling_Techniques_CW1\Report\Figures\epsMesh12'
+
+\end{lstlisting}
+\clearpage
 \subsection{Question 2b Results Script}\label{ap:Q2b}
 \begin{lstlisting}
 %Part 2b, investigating the linear source term

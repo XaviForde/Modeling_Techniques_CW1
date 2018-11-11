@@ -45,3 +45,35 @@ for T_L = 294.15:7:322.15    %
     %% Clear figure
     hold off
 end
+
+T_L = 322.15;
+figure() %initiate next figure
+
+%Calculate f_scalar for boundary condition
+f_constant = Q*T_L;
+f_linear = 4*Q*T_L;
+
+%Solve temperature using FEM with no Linear Source
+figure()
+meshLIN = StaticReactDiffSolver(k, -Q, xmin, xmax, ne, f_constant, f_linear, BC);
+dx = (xmax - xmin)/ne;
+for i = 2:ne
+
+    dcdxlin(i-1) = meshLIN.c(i) - meshLIN.c(i-1) / dx;
+    x(i-1) = (meshLIN.nvec(i) + meshLIN.nvec(i-1)) / 2;
+end
+plot(x, dcdxlin, 'r--')
+xlim([0 0.01])
+hold on
+meshLIN = StaticReactDiffSolver(k, -Q, xmin, xmax, ne, f_constant, 0, BC);
+dx = (xmax - xmin)/ne;
+for i = 2:ne
+
+    dcdxlin(i-1) = meshLIN.c(i) - meshLIN.c(i-1) / dx;
+    x(i-1) = (meshLIN.nvec(i) + meshLIN.nvec(i-1)) / 2;
+end
+plot(x, dcdxlin, 'b--')
+xlim([0 0.01])
+hold on
+
+
